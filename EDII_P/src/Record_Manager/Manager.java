@@ -24,18 +24,16 @@ public class Manager {
     int size;
 
     public int Write(char[] thing) throws IOException {
-        try {
-            FileWriter write_to = new FileWriter(path);
+        try (FileWriter write_to = new FileWriter(path)) {
             BufferedWriter br = null;
             br = new BufferedWriter(write_to, size);
             br.write(String.valueOf(delimiter) + Arrays.toString(thing));
             br.close();
-            write_to.close();
-            return 0;
         } catch (Exception e) {
             System.out.println(e.getMessage() + "something went wrong");
             return 1;
         }
+        return 0;
 
     }
 
