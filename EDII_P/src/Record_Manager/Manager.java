@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,12 +24,16 @@ public class Manager {
     String path;
     int size;
 
-    public int Write(char[] thing) throws IOException {
+    public int Write(String[] thing) throws IOException {
         try (FileWriter write_to = new FileWriter(path)) {
             BufferedWriter br = null;
             br = new BufferedWriter(write_to, size);
-            br.write(String.valueOf(delimiter) + Arrays.toString(thing));
+            br.write(delimiter + "");
+            for (int i = 0; i < thing.length; i++) {
+                br.write(thing[i] + delimiter);
+            }
             br.close();
+            write_to.close();
         } catch (Exception e) {
             System.out.println(e.getMessage() + "something went wrong");
             return 1;
@@ -37,22 +42,25 @@ public class Manager {
 
     }
 
-    public String Read() {
+    public ArrayList<String> Read() {
         BufferedReader br = null;
-        String readed;
         FileReader read_from;
+        ArrayList<String> readed = new ArrayList();
         try {
             read_from = new FileReader(path);
             br = new BufferedReader(read_from, size);
             try {
-                readed = br.readLine();
+                String temp;
+                while ((temp = br.readLine()) != null) {
+                    readed.add(temp);
+                }
                 br.close();
                 read_from.close();
                 return readed;
             } catch (IOException ex) {
-                System.out.println(ex.getMessage() + "no more records found");
-
+                Logger.getLogger(Manager.class.getName()).log(Level.SEVERE, null, ex);
             }
+
         } catch (FileNotFoundException ex) {
             System.out.println(ex.getMessage() + "file not found");
             return null;
