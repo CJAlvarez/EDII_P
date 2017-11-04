@@ -1,11 +1,5 @@
 # Compiled class file
 *.class
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
 
 # Log file
 *.log
