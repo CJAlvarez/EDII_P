@@ -7,10 +7,9 @@ import java.util.ArrayList;
  *
  * @author CJ
  */
-public class Queue<T extends Object> implements Cloneable, Serializable {
+public class Queue<T extends Object> extends List<T> implements Cloneable, Serializable {
 
     private int pos;
-    private ArrayList<T> list;
 
     public Queue() {
         this.list = new ArrayList();
@@ -25,7 +24,7 @@ public class Queue<T extends Object> implements Cloneable, Serializable {
         list.remove(0);
         return temp;
     }
-    
+
     public T getCurrent() {
         if (list.isEmpty()) {
             return null;
@@ -55,31 +54,6 @@ public class Queue<T extends Object> implements Cloneable, Serializable {
         } else {
             return null;
         }
-    }
-
-    public void add(T object) {
-        list.add(object);
-    }
-
-    public boolean isEmpty() {
-        return list.isEmpty();
-    }
-
-    public int size() {
-        return list.size();
-    }
-
-    public ArrayList<T> getQueue() {
-        return list;
-    }
-
-    public void setQueue(ArrayList<T> list) {
-        this.list = list;
-    }
-
-    @Override
-    public String toString() {
-        return list.toString();
     }
 
 }

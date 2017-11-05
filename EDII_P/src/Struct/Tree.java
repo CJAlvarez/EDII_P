@@ -2,7 +2,6 @@ package Struct;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Stack;
 
 /**
  *
@@ -41,6 +40,9 @@ public class Tree implements Serializable {
         this.value = value;
         if (subtrees != null) {
             this.children = subtrees;
+            for (int i = 0; i < children.size(); i++) {
+                this.children.get(i).setFather(this);
+            }
         } else {
             this.children = new ArrayList();
         }
@@ -201,7 +203,6 @@ public class Tree implements Serializable {
             }
         }
         setSeen(true);
-        //System.out.println(this.getContent());
         return this;
     }
 
@@ -217,8 +218,7 @@ public class Tree implements Serializable {
     @Override
     public String toString() {
         String data = "";
-        //System.out.println(content);
-        data += content + " { ";
+        data += content + " [" + value + "] { ";
         for (int i = 0; i < children.size(); i++) {
             data += children.get(i).toString() + ", ";
         }
@@ -226,5 +226,18 @@ public class Tree implements Serializable {
         return data;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        return content.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return value;
+    }
+
+    public ArrayList<Tree> getChildren() {
+        return children;
+    }
+
 }
-    
