@@ -1,6 +1,7 @@
 package Principal;
 
 import java.awt.Dimension;
+import java.awt.LayoutManager;
 import java.awt.Toolkit;
 
 /**
@@ -28,26 +29,27 @@ public class Wall extends javax.swing.JFrame {
 
         homePanel = new Principal.Menu.Home();
         filePanel = new Principal.Menu.File();
-        workPanel = new Principal.Menu.Work();
+        work1 = new Principal.Menu.Work();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
+        setMinimumSize(new java.awt.Dimension(500, 500));
         setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.85), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.85));
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                formComponentResized(evt);
-            }
-        });
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(workPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
-        pack();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(work1, javax.swing.GroupLayout.PREFERRED_SIZE, 800, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(work1, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+        );
+
+        setBounds(0, 0, 816, 432);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        workPanel.setSize(this.getSize());
-    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
@@ -101,7 +103,7 @@ public class Wall extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.File filePanel;
     private Principal.Menu.Home homePanel;
-    private Principal.Menu.Work workPanel;
+    private Principal.Menu.Work work1;
     // End of variables declaration//GEN-END:variables
 
 }

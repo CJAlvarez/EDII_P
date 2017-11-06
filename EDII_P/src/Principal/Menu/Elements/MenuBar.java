@@ -16,6 +16,7 @@ public class MenuBar extends javax.swing.JPanel {
      */
     public MenuBar() {
         initComponents();
+        titleBar2.setLocation((int)(this.getWidth() * 0.60), 0);
     }
 
     /**
@@ -27,31 +28,47 @@ public class MenuBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBar = new Principal.Menu.Elements.TitleBar();
+        titleBar2 = new Principal.Menu.Elements.TitleBar();
 
         setBackground(new java.awt.Color(204, 255, 51));
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setPreferredSize(new java.awt.Dimension(1000, 50));
-        addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentResized(java.awt.event.ComponentEvent evt) {
-                formComponentResized(evt);
-            }
-        });
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDoubleBuffered(false);
+        setFocusCycleRoot(true);
+        setPreferredSize(this.getSize());
 
-        titleBar.setBackground(new java.awt.Color(255, 153, 153));
-        titleBar.setPreferredSize(new java.awt.Dimension(1000, 30));
-        titleBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(titleBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 440, 50));
+        titleBar2.setBorder(null);
+
+        javax.swing.GroupLayout titleBar2Layout = new javax.swing.GroupLayout(titleBar2);
+        titleBar2.setLayout(titleBar2Layout);
+        titleBar2Layout.setHorizontalGroup(
+            titleBar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 339, Short.MAX_VALUE)
+        );
+        titleBar2Layout.setVerticalGroup(
+            titleBar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 113, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(366, 366, 366)
+                .addComponent(titleBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(titleBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        titleBar2.getAccessibleContext().setAccessibleParent(null);
+
+        getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        titleBar.setSize(this.getWidth(), this.getHeight());
-    }//GEN-LAST:event_formComponentResized
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Principal.Menu.Elements.TitleBar titleBar;
+    private Principal.Menu.Elements.TitleBar titleBar2;
     // End of variables declaration//GEN-END:variables
 }

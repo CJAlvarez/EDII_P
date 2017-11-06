@@ -5,7 +5,7 @@ import java.awt.Toolkit;
 
 /**
  *
- * @author CJ
+ * @author CJ*
  */
 public class Work extends javax.swing.JPanel {
 
@@ -13,6 +13,7 @@ public class Work extends javax.swing.JPanel {
      * Creates new form Simple
      */
     public Work() {
+        
         initComponents();
     }
 
@@ -25,44 +26,29 @@ public class Work extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuBar = new Principal.Menu.Elements.MenuBar();
-        statusBar1 = new Principal.Menu.Elements.StatusBar();
+        menuBar1 = new Principal.Menu.Elements.MenuBar();
         toolBar1 = new Principal.Menu.Elements.ToolBar();
         navigationPanel1 = new Principal.Menu.Elements.NavigationPanel();
-        tabList1 = new Principal.Menu.Elements.TabList();
-        filterBar1 = new Principal.Menu.Elements.FilterBar();
         tabBar1 = new Principal.Menu.Elements.TabBar();
         deskPanel1 = new Principal.Menu.Elements.DeskPanel();
+        statusBar1 = new Principal.Menu.Elements.StatusBar();
 
+        setBackground(new java.awt.Color(153, 153, 255));
         setAutoscrolls(true);
+        setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        setFocusCycleRoot(true);
+        setFocusTraversalPolicyProvider(true);
         setName(""); // NOI18N
-        setPreferredSize(this.getSize());
+        setPreferredSize(new java.awt.Dimension(120, 12));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
             }
         });
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuBar.setMinimumSize(new java.awt.Dimension(100, 30));
-        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 30));
-
-        statusBar1.setBackground(new java.awt.Color(255, 255, 0));
-
-        javax.swing.GroupLayout statusBar1Layout = new javax.swing.GroupLayout(statusBar1);
-        statusBar1.setLayout(statusBar1Layout);
-        statusBar1Layout.setHorizontalGroup(
-            statusBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        statusBar1Layout.setVerticalGroup(
-            statusBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 38, Short.MAX_VALUE)
-        );
-
-        add(statusBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 396, 679, -1));
-
-        toolBar1.setBackground(new java.awt.Color(51, 51, 255));
+        menuBar1.setBorder(null);
+        menuBar1.setDoubleBuffered(true);
+        menuBar1.setMinimumSize(new java.awt.Dimension(0, 0));
 
         javax.swing.GroupLayout toolBar1Layout = new javax.swing.GroupLayout(toolBar1);
         toolBar1.setLayout(toolBar1Layout);
@@ -72,90 +58,87 @@ public class Work extends javax.swing.JPanel {
         );
         toolBar1Layout.setVerticalGroup(
             toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
+            .addGap(0, 63, Short.MAX_VALUE)
         );
-
-        add(toolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 679, -1));
-
-        navigationPanel1.setBackground(new java.awt.Color(51, 255, 51));
-        navigationPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        tabList1.setBackground(new java.awt.Color(255, 0, 255));
-
-        javax.swing.GroupLayout tabList1Layout = new javax.swing.GroupLayout(tabList1);
-        tabList1.setLayout(tabList1Layout);
-        tabList1Layout.setHorizontalGroup(
-            tabList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 138, Short.MAX_VALUE)
-        );
-        tabList1Layout.setVerticalGroup(
-            tabList1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 235, Short.MAX_VALUE)
-        );
-
-        navigationPanel1.add(tabList1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 73, -1, -1));
-
-        filterBar1.setBackground(new java.awt.Color(102, 0, 102));
-
-        javax.swing.GroupLayout filterBar1Layout = new javax.swing.GroupLayout(filterBar1);
-        filterBar1.setLayout(filterBar1Layout);
-        filterBar1Layout.setHorizontalGroup(
-            filterBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        filterBar1Layout.setVerticalGroup(
-            filterBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
-        );
-
-        navigationPanel1.add(filterBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 138, -1));
-
-        add(navigationPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 150, 320));
-
-        tabBar1.setBackground(new java.awt.Color(0, 153, 153));
 
         javax.swing.GroupLayout tabBar1Layout = new javax.swing.GroupLayout(tabBar1);
         tabBar1.setLayout(tabBar1Layout);
         tabBar1Layout.setHorizontalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
         tabBar1Layout.setVerticalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
+            .addGap(0, 29, Short.MAX_VALUE)
         );
-
-        add(tabBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 530, 30));
-
-        deskPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout deskPanel1Layout = new javax.swing.GroupLayout(deskPanel1);
         deskPanel1.setLayout(deskPanel1Layout);
         deskPanel1Layout.setHorizontalGroup(
             deskPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         deskPanel1Layout.setVerticalGroup(
             deskPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 290, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        add(deskPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 530, 290));
+        javax.swing.GroupLayout statusBar1Layout = new javax.swing.GroupLayout(statusBar1);
+        statusBar1.setLayout(statusBar1Layout);
+        statusBar1Layout.setHorizontalGroup(
+            statusBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        statusBar1Layout.setVerticalGroup(
+            statusBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 36, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tabBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(deskPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(menuBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(statusBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(menuBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(toolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tabBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(deskPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(navigationPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(statusBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        menuBar.setSize(this.getWidth(), 30);
+        //menuBar.setSize(this.getWidth(), 30);
         dimension = this.getSize();
     }//GEN-LAST:event_formComponentResized
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.Elements.DeskPanel deskPanel1;
-    private Principal.Menu.Elements.FilterBar filterBar1;
-    private Principal.Menu.Elements.MenuBar menuBar;
+    private Principal.Menu.Elements.MenuBar menuBar1;
     private Principal.Menu.Elements.NavigationPanel navigationPanel1;
     private Principal.Menu.Elements.StatusBar statusBar1;
     private Principal.Menu.Elements.TabBar tabBar1;
-    private Principal.Menu.Elements.TabList tabList1;
     private Principal.Menu.Elements.ToolBar toolBar1;
     // End of variables declaration//GEN-END:variables
 
