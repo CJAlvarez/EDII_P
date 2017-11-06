@@ -27,7 +27,7 @@ public class TabBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(0, 204, 51));
+        setBackground(new java.awt.Color(191, 69, 108));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
         setFocusTraversalPolicyProvider(true);

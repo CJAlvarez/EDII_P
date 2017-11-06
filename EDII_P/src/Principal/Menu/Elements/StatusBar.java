@@ -27,7 +27,7 @@ public class StatusBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 255, 0));
+        setBackground(new java.awt.Color(84, 49, 55));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
         setFocusTraversalPolicyProvider(true);

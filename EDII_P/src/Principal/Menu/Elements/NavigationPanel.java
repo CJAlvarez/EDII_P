@@ -30,12 +30,14 @@ public class NavigationPanel extends javax.swing.JPanel {
         filterBar1 = new Principal.Menu.Elements.FilterBar();
         tabList1 = new Principal.Menu.Elements.TabList();
 
-        setBackground(new java.awt.Color(0, 153, 153));
+        setBackground(new java.awt.Color(120, 53, 71));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
         setFocusTraversalPolicyProvider(true);
         setInheritsPopupMenu(true);
 
+        filterBar1.setBackground(new java.awt.Color(255, 204, 204));
+        filterBar1.setForeground(new java.awt.Color(255, 255, 255));
         filterBar1.setEnabled(false);
 
         javax.swing.GroupLayout filterBar1Layout = new javax.swing.GroupLayout(filterBar1);
@@ -48,6 +50,8 @@ public class NavigationPanel extends javax.swing.JPanel {
             filterBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 25, Short.MAX_VALUE)
         );
+
+        tabList1.setBackground(new java.awt.Color(255, 204, 204));
 
         javax.swing.GroupLayout tabList1Layout = new javax.swing.GroupLayout(tabList1);
         tabList1.setLayout(tabList1Layout);

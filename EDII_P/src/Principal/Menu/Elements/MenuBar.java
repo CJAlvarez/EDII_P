@@ -30,13 +30,14 @@ public class MenuBar extends javax.swing.JPanel {
 
         titleBar2 = new Principal.Menu.Elements.TitleBar();
 
-        setBackground(new java.awt.Color(204, 255, 51));
+        setBackground(new java.awt.Color(55, 41, 40));
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setDoubleBuffered(false);
         setFocusCycleRoot(true);
         setPreferredSize(this.getSize());
 
+        titleBar2.setBackground(new java.awt.Color(55, 41, 40));
         titleBar2.setBorder(null);
 
         javax.swing.GroupLayout titleBar2Layout = new javax.swing.GroupLayout(titleBar2);

@@ -27,7 +27,7 @@ public class ToolBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(0, 51, 0));
+        setBackground(new java.awt.Color(84, 49, 55));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
 
