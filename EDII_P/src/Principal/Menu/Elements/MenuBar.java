@@ -27,29 +27,31 @@ public class MenuBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 738, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 31, Short.MAX_VALUE)
-        );
+        titleBar = new Principal.Menu.Elements.TitleBar();
+
+        setBackground(new java.awt.Color(204, 255, 51));
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setPreferredSize(new java.awt.Dimension(1000, 50));
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titleBar.setBackground(new java.awt.Color(255, 153, 153));
+        titleBar.setPreferredSize(new java.awt.Dimension(1000, 30));
+        titleBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add(titleBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 440, 50));
     }// </editor-fold>//GEN-END:initComponents
 
-    public boolean responsive(int width, int height) {
-        try {
-            this.setSize(((int) width * 0.90), 10);
-            System.out.println(this.getWidth());
-            return true;
-        } catch (Exception e) {
-            System.out.println("ERROR_MENUBAR");
-            return false;
-        }
-    }
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        titleBar.setSize(this.getWidth(), this.getHeight());
+    }//GEN-LAST:event_formComponentResized
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private Principal.Menu.Elements.TitleBar titleBar;
     // End of variables declaration//GEN-END:variables
 }

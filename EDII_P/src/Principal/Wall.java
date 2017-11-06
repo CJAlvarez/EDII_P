@@ -15,7 +15,6 @@ public class Wall extends javax.swing.JFrame {
     public Wall() {
         initComponents();
         init();
-        responsive();
     }
 
     /**
@@ -32,29 +31,22 @@ public class Wall extends javax.swing.JFrame {
         workPanel = new Principal.Menu.Work();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(null);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocationByPlatform(true);
+        setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.85), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.85));
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentResized(java.awt.event.ComponentEvent evt) {
                 formComponentResized(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(workPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(workPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-        );
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(workPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
-        responsive();
+        workPanel.setSize(this.getSize());
     }//GEN-LAST:event_formComponentResized
 
     /**
@@ -96,9 +88,7 @@ public class Wall extends javax.swing.JFrame {
     private boolean init() {
         try {
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-            this.width = (int) (screenSize.getWidth() * 0.85);
-            this.height = (int) (screenSize.getHeight() * 0.85);
-            this.setSize(width, height);
+            this.setSize((int) (screenSize.getWidth() * 0.85), (int) (screenSize.getHeight() * 0.85));
             this.setLocationRelativeTo(null);
             return true;
         } catch (Exception e) {
@@ -107,22 +97,11 @@ public class Wall extends javax.swing.JFrame {
         }
     }
 
-    private boolean responsive() {
-        width = this.getWidth();
-        height = this.getHeight();
-        workPanel.responsive(width, height);
-        return false;
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.File filePanel;
     private Principal.Menu.Home homePanel;
     private Principal.Menu.Work workPanel;
     // End of variables declaration//GEN-END:variables
-
-    /* VARIABLES. */
-    public int width;
-    public int height;
 
 }

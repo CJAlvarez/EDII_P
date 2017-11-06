@@ -26,7 +26,6 @@ public class Work extends javax.swing.JPanel {
     private void initComponents() {
 
         menuBar = new Principal.Menu.Elements.MenuBar();
-        titleBar1 = new Principal.Menu.Elements.TitleBar();
         statusBar1 = new Principal.Menu.Elements.StatusBar();
         toolBar1 = new Principal.Menu.Elements.ToolBar();
         navigationPanel1 = new Principal.Menu.Elements.NavigationPanel();
@@ -35,26 +34,17 @@ public class Work extends javax.swing.JPanel {
         tabBar1 = new Principal.Menu.Elements.TabBar();
         deskPanel1 = new Principal.Menu.Elements.DeskPanel();
 
+        setAutoscrolls(true);
+        setName(""); // NOI18N
+        setPreferredSize(this.getSize());
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
+            }
+        });
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuBar.setBackground(new java.awt.Color(153, 0, 0));
-        menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        titleBar1.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout titleBar1Layout = new javax.swing.GroupLayout(titleBar1);
-        titleBar1.setLayout(titleBar1Layout);
-        titleBar1Layout.setHorizontalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
-        );
-        titleBar1Layout.setVerticalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        menuBar.add(titleBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 440, 30));
-
+        menuBar.setMinimumSize(new java.awt.Dimension(100, 30));
         add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 30));
 
         statusBar1.setBackground(new java.awt.Color(255, 255, 0));
@@ -153,18 +143,10 @@ public class Work extends javax.swing.JPanel {
         add(deskPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 530, 290));
     }// </editor-fold>//GEN-END:initComponents
 
-    public boolean responsive(int width, int height) {
-        try {
-            this.width = width;
-            this.height = height;
-            this.setSize(width, height);
-            menuBar.responsive(width, height);
-            return true;
-        } catch (Exception e) {
-            System.out.println("ERORR_WORK");
-            return false;
-        }
-    }
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        menuBar.setSize(this.getWidth(), 30);
+        dimension = this.getSize();
+    }//GEN-LAST:event_formComponentResized
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.Elements.DeskPanel deskPanel1;
@@ -174,11 +156,8 @@ public class Work extends javax.swing.JPanel {
     private Principal.Menu.Elements.StatusBar statusBar1;
     private Principal.Menu.Elements.TabBar tabBar1;
     private Principal.Menu.Elements.TabList tabList1;
-    private Principal.Menu.Elements.TitleBar titleBar1;
     private Principal.Menu.Elements.ToolBar toolBar1;
     // End of variables declaration//GEN-END:variables
 
-    /* VARIABLES. */
-    public int width;
-    public int height;
+    Dimension dimension;
 }
