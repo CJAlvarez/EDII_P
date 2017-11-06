@@ -7,7 +7,7 @@ package Principal.Menu.Elements;
 
 /**
  *
- * @author USER PC
+ * @author CJ
  */
 public class TabList extends javax.swing.JPanel {
 

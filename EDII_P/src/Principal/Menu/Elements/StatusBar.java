@@ -7,7 +7,7 @@ package Principal.Menu.Elements;
 
 /**
  *
- * @author USER PC
+ * @author CJ
  */
 public class StatusBar extends javax.swing.JPanel {
 

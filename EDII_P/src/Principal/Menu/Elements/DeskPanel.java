@@ -7,7 +7,7 @@ package Principal.Menu.Elements;
 
 /**
  *
- * @author USER PC
+ * @author CJ
  */
 public class DeskPanel extends javax.swing.JPanel {
 

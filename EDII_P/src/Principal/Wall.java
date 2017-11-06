@@ -1,5 +1,8 @@
 package Principal;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author CJ
@@ -11,6 +14,8 @@ public class Wall extends javax.swing.JFrame {
      */
     public Wall() {
         initComponents();
+        init();
+        resposive();
     }
 
     /**
@@ -22,29 +27,35 @@ public class Wall extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        home1 = new Principal.Menu.Home();
+        homePanel = new Principal.Menu.Home();
+        filePanel = new Principal.Menu.File();
+        workPanel = new Principal.Menu.Work();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(null);
+        addWindowStateListener(new java.awt.event.WindowStateListener() {
+            public void windowStateChanged(java.awt.event.WindowEvent evt) {
+                formWindowStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(home1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(workPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 692, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(home1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(workPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
+        System.out.println("Changing");
+    }//GEN-LAST:event_formWindowStateChanged
 
     /**
      * @param args the command line arguments
@@ -82,7 +93,28 @@ public class Wall extends javax.swing.JFrame {
         });
     }
 
+    private boolean init() {
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        this.width = (int) (screenSize.getWidth() * 0.85);
+        this.height = (int) (screenSize.getHeight() * 0.85);
+        return false;
+    }
+
+    private boolean resposive() {
+        this.setSize(width, height);
+        this.setLocationRelativeTo(null);
+        return false;
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Principal.Menu.Home home1;
+    private Principal.Menu.File filePanel;
+    private Principal.Menu.Home homePanel;
+    private Principal.Menu.Work workPanel;
     // End of variables declaration//GEN-END:variables
+
+    /* VARIABLES. */
+    public int width;
+    public int height;
+
 }
