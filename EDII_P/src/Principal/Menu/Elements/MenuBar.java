@@ -39,6 +39,16 @@ public class MenuBar extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean responsive(int width, int height) {
+        try {
+            this.setSize(((int) width * 0.90), 10);
+            System.out.println(this.getWidth());
+            return true;
+        } catch (Exception e) {
+            System.out.println("ERROR_MENUBAR");
+            return false;
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

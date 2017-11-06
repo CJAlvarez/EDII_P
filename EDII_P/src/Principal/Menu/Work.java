@@ -1,5 +1,8 @@
 package Principal.Menu;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
 /**
  *
  * @author CJ
@@ -22,7 +25,7 @@ public class Work extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuBar1 = new Principal.Menu.Elements.MenuBar();
+        menuBar = new Principal.Menu.Elements.MenuBar();
         titleBar1 = new Principal.Menu.Elements.TitleBar();
         statusBar1 = new Principal.Menu.Elements.StatusBar();
         toolBar1 = new Principal.Menu.Elements.ToolBar();
@@ -34,8 +37,8 @@ public class Work extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menuBar1.setBackground(new java.awt.Color(153, 0, 0));
-        menuBar1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        menuBar.setBackground(new java.awt.Color(153, 0, 0));
+        menuBar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titleBar1.setBackground(new java.awt.Color(255, 204, 204));
 
@@ -50,9 +53,9 @@ public class Work extends javax.swing.JPanel {
             .addGap(0, 30, Short.MAX_VALUE)
         );
 
-        menuBar1.add(titleBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 440, 30));
+        menuBar.add(titleBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 440, 30));
 
-        add(menuBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 30));
+        add(menuBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 30));
 
         statusBar1.setBackground(new java.awt.Color(255, 255, 0));
 
@@ -150,11 +153,23 @@ public class Work extends javax.swing.JPanel {
         add(deskPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 530, 290));
     }// </editor-fold>//GEN-END:initComponents
 
+    public boolean responsive(int width, int height) {
+        try {
+            this.width = width;
+            this.height = height;
+            this.setSize(width, height);
+            menuBar.responsive(width, height);
+            return true;
+        } catch (Exception e) {
+            System.out.println("ERORR_WORK");
+            return false;
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.Elements.DeskPanel deskPanel1;
     private Principal.Menu.Elements.FilterBar filterBar1;
-    private Principal.Menu.Elements.MenuBar menuBar1;
+    private Principal.Menu.Elements.MenuBar menuBar;
     private Principal.Menu.Elements.NavigationPanel navigationPanel1;
     private Principal.Menu.Elements.StatusBar statusBar1;
     private Principal.Menu.Elements.TabBar tabBar1;
@@ -162,4 +177,8 @@ public class Work extends javax.swing.JPanel {
     private Principal.Menu.Elements.TitleBar titleBar1;
     private Principal.Menu.Elements.ToolBar toolBar1;
     // End of variables declaration//GEN-END:variables
+
+    /* VARIABLES. */
+    public int width;
+    public int height;
 }

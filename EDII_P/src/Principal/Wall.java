@@ -15,7 +15,7 @@ public class Wall extends javax.swing.JFrame {
     public Wall() {
         initComponents();
         init();
-        resposive();
+        responsive();
     }
 
     /**
@@ -33,9 +33,9 @@ public class Wall extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(null);
-        addWindowStateListener(new java.awt.event.WindowStateListener() {
-            public void windowStateChanged(java.awt.event.WindowEvent evt) {
-                formWindowStateChanged(evt);
+        addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                formComponentResized(evt);
             }
         });
 
@@ -53,9 +53,9 @@ public class Wall extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void formWindowStateChanged(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowStateChanged
-        System.out.println("Changing");
-    }//GEN-LAST:event_formWindowStateChanged
+    private void formComponentResized(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentResized
+        responsive();
+    }//GEN-LAST:event_formComponentResized
 
     /**
      * @param args the command line arguments
@@ -94,15 +94,23 @@ public class Wall extends javax.swing.JFrame {
     }
 
     private boolean init() {
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        this.width = (int) (screenSize.getWidth() * 0.85);
-        this.height = (int) (screenSize.getHeight() * 0.85);
-        return false;
+        try {
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            this.width = (int) (screenSize.getWidth() * 0.85);
+            this.height = (int) (screenSize.getHeight() * 0.85);
+            this.setSize(width, height);
+            this.setLocationRelativeTo(null);
+            return true;
+        } catch (Exception e) {
+            System.out.println("ERROR_WALL");
+            return false;
+        }
     }
 
-    private boolean resposive() {
-        this.setSize(width, height);
-        this.setLocationRelativeTo(null);
+    private boolean responsive() {
+        width = this.getWidth();
+        height = this.getHeight();
+        workPanel.responsive(width, height);
         return false;
     }
 
