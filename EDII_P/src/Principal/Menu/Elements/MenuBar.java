@@ -16,7 +16,7 @@ public class MenuBar extends javax.swing.JPanel {
      */
     public MenuBar() {
         initComponents();
-        titleBar2.setLocation((int)(this.getWidth() * 0.60), 0);
+        //titleBar2.setLocation((int)(this.getWidth() * 0.60), 0);
     }
 
     /**
@@ -28,48 +28,39 @@ public class MenuBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        titleBar2 = new Principal.Menu.Elements.TitleBar();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+
+        jMenu1.setText("File");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
 
         setBackground(new java.awt.Color(55, 41, 40));
         setAutoscrolls(true);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        setDoubleBuffered(false);
         setFocusCycleRoot(true);
-        setPreferredSize(this.getSize());
-
-        titleBar2.setBackground(new java.awt.Color(55, 41, 40));
-        titleBar2.setBorder(null);
-
-        javax.swing.GroupLayout titleBar2Layout = new javax.swing.GroupLayout(titleBar2);
-        titleBar2.setLayout(titleBar2Layout);
-        titleBar2Layout.setHorizontalGroup(
-            titleBar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
-        );
-        titleBar2Layout.setVerticalGroup(
-            titleBar2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 113, Short.MAX_VALUE)
-        );
+        setFocusTraversalPolicyProvider(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(366, 366, 366)
-                .addComponent(titleBar2, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE))
+            .addGap(0, 651, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titleBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 221, Short.MAX_VALUE)
         );
-
-        titleBar2.getAccessibleContext().setAccessibleParent(null);
 
         getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Principal.Menu.Elements.TitleBar titleBar2;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

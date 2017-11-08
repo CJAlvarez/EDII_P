@@ -29,28 +29,26 @@ public class Wall extends javax.swing.JFrame {
 
         homePanel = new Principal.Menu.Home();
         filePanel = new Principal.Menu.File();
-        work1 = new Principal.Menu.Work();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setFocusTraversalPolicyProvider(true);
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(500, 500));
-        setUndecorated(true);
         setSize((int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() * 0.85), (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() * 0.85));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(work1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(work1, javax.swing.GroupLayout.DEFAULT_SIZE, 393, Short.MAX_VALUE)
+            .addGap(0, 393, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(800, 393));
+        setSize(new java.awt.Dimension(816, 432));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -106,7 +104,6 @@ public class Wall extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.File filePanel;
     private Principal.Menu.Home homePanel;
-    private Principal.Menu.Work work1;
     // End of variables declaration//GEN-END:variables
 
 }
