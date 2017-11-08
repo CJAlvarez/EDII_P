@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Principal.Menu;
+package Principal;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -74,7 +74,7 @@ public class Work extends javax.swing.JFrame {
         tabBar1.setLayout(tabBar1Layout);
         tabBar1Layout.setHorizontalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 465, Short.MAX_VALUE)
+            .addGap(0, 497, Short.MAX_VALUE)
         );
         tabBar1Layout.setVerticalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +137,6 @@ public class Work extends javax.swing.JFrame {
         MenuBar.setForeground(new java.awt.Color(55, 41, 40));
         MenuBar.setToolTipText("");
         MenuBar.setAlignmentX(0.0F);
-        MenuBar.setAlignmentY(0.0F);
         MenuBar.setBorderPainted(false);
         MenuBar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         MenuBar.setDoubleBuffered(true);
@@ -222,9 +221,9 @@ public class Work extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+            .addGap(0, 732, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -233,7 +232,7 @@ public class Work extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(716, 745));
+        setSize(new java.awt.Dimension(748, 745));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -291,7 +290,7 @@ public class Work extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar MenuBar;
+    javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu Menu_Edit;
     private javax.swing.JMenu Menu_File;
     private javax.swing.JMenu Menu_Help;

@@ -1,4 +1,4 @@
-package Principal.Menu;
+package Principal;
 
 /**
  *
