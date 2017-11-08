@@ -25,7 +25,6 @@ public class Home extends javax.swing.JPanel {
         browsePanel1 = new Principal.Menu.Elements.BrowsePanel();
         searchBar1 = new Principal.Menu.Elements.SearchBar();
         optionPanel1 = new Principal.Menu.Elements.OptionPanel();
-        titleBar1 = new Principal.Menu.Elements.TitleBar();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,21 +72,6 @@ public class Home extends javax.swing.JPanel {
         );
 
         add(optionPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, 500, 220));
-
-        titleBar1.setBackground(new java.awt.Color(102, 0, 102));
-
-        javax.swing.GroupLayout titleBar1Layout = new javax.swing.GroupLayout(titleBar1);
-        titleBar1.setLayout(titleBar1Layout);
-        titleBar1Layout.setHorizontalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        titleBar1Layout.setVerticalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        add(titleBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, 500, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -95,6 +79,5 @@ public class Home extends javax.swing.JPanel {
     private Principal.Menu.Elements.BrowsePanel browsePanel1;
     private Principal.Menu.Elements.OptionPanel optionPanel1;
     private Principal.Menu.Elements.SearchBar searchBar1;
-    private Principal.Menu.Elements.TitleBar titleBar1;
     // End of variables declaration//GEN-END:variables
 }

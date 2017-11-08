@@ -23,7 +23,6 @@ public class File extends javax.swing.JPanel {
     private void initComponents() {
 
         browsePanel1 = new Principal.Menu.Elements.BrowsePanel();
-        titleBar1 = new Principal.Menu.Elements.TitleBar();
         filePanel1 = new Principal.Menu.Elements.FilePanel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -42,21 +41,6 @@ public class File extends javax.swing.JPanel {
         );
 
         add(browsePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 450, -1));
-
-        titleBar1.setBackground(new java.awt.Color(255, 255, 0));
-
-        javax.swing.GroupLayout titleBar1Layout = new javax.swing.GroupLayout(titleBar1);
-        titleBar1.setLayout(titleBar1Layout);
-        titleBar1Layout.setHorizontalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        titleBar1Layout.setVerticalGroup(
-            titleBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 29, Short.MAX_VALUE)
-        );
-
-        add(titleBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 0, 500, -1));
 
         filePanel1.setBackground(new java.awt.Color(0, 204, 0));
 
@@ -78,6 +62,5 @@ public class File extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.Elements.BrowsePanel browsePanel1;
     private Principal.Menu.Elements.FilePanel filePanel1;
-    private Principal.Menu.Elements.TitleBar titleBar1;
     // End of variables declaration//GEN-END:variables
 }

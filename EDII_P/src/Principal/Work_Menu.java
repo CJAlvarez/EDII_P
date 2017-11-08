@@ -12,12 +12,12 @@ import java.awt.Toolkit;
  *
  * @author USER PC
  */
-public class Work extends javax.swing.JFrame {
+public class Work_Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Works
      */
-    public Work() {
+    public Work_Menu() {
         initComponents();
         init();
     }
@@ -32,14 +32,31 @@ public class Work extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        toolBar1 = new Principal.Menu.Elements.ToolBar();
         navigationPanel1 = new Principal.Menu.Elements.NavigationPanel();
         tabBar1 = new Principal.Menu.Elements.TabBar();
-        deskPanel1 = new Principal.Menu.Elements.DeskPanel();
         statusBar1 = new Principal.Menu.Elements.StatusBar();
+        deskPanel2 = new Principal.Menu.Elements.DeskPanel();
+        toolBar1 = new Principal.Menu.Elements.ToolBar();
         MenuBar = new javax.swing.JMenuBar();
         Menu_File = new javax.swing.JMenu();
+        Item_New = new javax.swing.JMenuItem();
+        Item_Open = new javax.swing.JMenuItem();
+        Item_Save = new javax.swing.JMenuItem();
+        Item_SaveAs = new javax.swing.JMenuItem();
+        Item_Close = new javax.swing.JMenuItem();
+        Item_Exit = new javax.swing.JMenuItem();
         Menu_Edit = new javax.swing.JMenu();
+        Menu_Field = new javax.swing.JMenu();
+        Item_NewField = new javax.swing.JMenuItem();
+        Item_PrintField = new javax.swing.JMenuItem();
+        Item_EditField = new javax.swing.JMenuItem();
+        Item_DeleteField = new javax.swing.JMenuItem();
+        Menu_Record = new javax.swing.JMenu();
+        Item_SetRecord = new javax.swing.JMenuItem();
+        Item_EditRecord = new javax.swing.JMenuItem();
+        Item_PrintRecord = new javax.swing.JMenuItem();
+        Item_FindRecord = new javax.swing.JMenuItem();
+        Item_DeleteRecord = new javax.swing.JMenuItem();
         Menu_View = new javax.swing.JMenu();
         Menu_Window = new javax.swing.JMenu();
         Menu_Help = new javax.swing.JMenu();
@@ -59,37 +76,15 @@ public class Work extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout toolBar1Layout = new javax.swing.GroupLayout(toolBar1);
-        toolBar1.setLayout(toolBar1Layout);
-        toolBar1Layout.setHorizontalGroup(
-            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        toolBar1Layout.setVerticalGroup(
-            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 63, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout tabBar1Layout = new javax.swing.GroupLayout(tabBar1);
         tabBar1.setLayout(tabBar1Layout);
         tabBar1Layout.setHorizontalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         tabBar1Layout.setVerticalGroup(
             tabBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 29, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout deskPanel1Layout = new javax.swing.GroupLayout(deskPanel1);
-        deskPanel1.setLayout(deskPanel1Layout);
-        deskPanel1Layout.setHorizontalGroup(
-            deskPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        deskPanel1Layout.setVerticalGroup(
-            deskPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout statusBar1Layout = new javax.swing.GroupLayout(statusBar1);
@@ -107,29 +102,37 @@ public class Work extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tabBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(deskPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addComponent(toolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(statusBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statusBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deskPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                            .addComponent(tabBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(0, 0, 0))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(toolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(tabBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(deskPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(navigationPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 582, Short.MAX_VALUE))
-                .addGap(0, 0, 0)
-                .addComponent(statusBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0))
+                        .addComponent(deskPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
+                .addComponent(statusBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout toolBar1Layout = new javax.swing.GroupLayout(toolBar1);
+        toolBar1.setLayout(toolBar1Layout);
+        toolBar1Layout.setHorizontalGroup(
+            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        toolBar1Layout.setVerticalGroup(
+            toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 45, Short.MAX_VALUE)
         );
 
         MenuBar.setBackground(new java.awt.Color(55, 41, 40));
@@ -157,6 +160,32 @@ public class Work extends javax.swing.JFrame {
         Menu_File.setFocusPainted(true);
         Menu_File.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         Menu_File.setOpaque(false);
+
+        Item_New.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
+        Item_New.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Window/New_20.png"))); // NOI18N
+        Item_New.setText("Nuevo");
+        Menu_File.add(Item_New);
+
+        Item_Open.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        Item_Open.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Window/Open_20.png"))); // NOI18N
+        Item_Open.setText("Abrir");
+        Menu_File.add(Item_Open);
+
+        Item_Save.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
+        Item_Save.setText("Guardar");
+        Menu_File.add(Item_Save);
+
+        Item_SaveAs.setText("Guardar como...");
+        Menu_File.add(Item_SaveAs);
+
+        Item_Close.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        Item_Close.setText("Cerrar");
+        Menu_File.add(Item_Close);
+
+        Item_Exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
+        Item_Exit.setText("Salir");
+        Menu_File.add(Item_Exit);
+
         MenuBar.add(Menu_File);
 
         Menu_Edit.setBackground(new java.awt.Color(55, 41, 40));
@@ -171,6 +200,42 @@ public class Work extends javax.swing.JFrame {
         Menu_Edit.setFocusPainted(true);
         Menu_Edit.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         Menu_Edit.setOpaque(false);
+
+        Menu_Field.setText("Campo");
+
+        Item_NewField.setText("Crear");
+        Menu_Field.add(Item_NewField);
+
+        Item_PrintField.setText("Listar");
+        Menu_Field.add(Item_PrintField);
+
+        Item_EditField.setText("Modificar");
+        Menu_Field.add(Item_EditField);
+
+        Item_DeleteField.setText("Borrar");
+        Menu_Field.add(Item_DeleteField);
+
+        Menu_Edit.add(Menu_Field);
+
+        Menu_Record.setText("Registro");
+
+        Item_SetRecord.setText("Introducir");
+        Menu_Record.add(Item_SetRecord);
+
+        Item_EditRecord.setText("Modificar");
+        Menu_Record.add(Item_EditRecord);
+
+        Item_PrintRecord.setText("Listar");
+        Menu_Record.add(Item_PrintRecord);
+
+        Item_FindRecord.setText("Buscar");
+        Menu_Record.add(Item_FindRecord);
+
+        Item_DeleteRecord.setText("Borrar");
+        Menu_Record.add(Item_DeleteRecord);
+
+        Menu_Edit.add(Menu_Record);
+
         MenuBar.add(Menu_Edit);
 
         Menu_View.setBackground(new java.awt.Color(55, 41, 40));
@@ -221,18 +286,18 @@ public class Work extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 732, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
+            .addComponent(toolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 681, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(toolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE))
         );
 
-        setSize(new java.awt.Dimension(748, 745));
+        setSize(new java.awt.Dimension(872, 405));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -258,21 +323,23 @@ public class Work extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Work.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Work_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Work.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Work_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Work.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Work_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Work.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Work_Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Work().setVisible(true);
+                new Work_Menu().setVisible(true);
             }
         });
     }
@@ -290,13 +357,30 @@ public class Work extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Item_Close;
+    private javax.swing.JMenuItem Item_DeleteField;
+    private javax.swing.JMenuItem Item_DeleteRecord;
+    private javax.swing.JMenuItem Item_EditField;
+    private javax.swing.JMenuItem Item_EditRecord;
+    private javax.swing.JMenuItem Item_Exit;
+    private javax.swing.JMenuItem Item_FindRecord;
+    private javax.swing.JMenuItem Item_New;
+    private javax.swing.JMenuItem Item_NewField;
+    private javax.swing.JMenuItem Item_Open;
+    private javax.swing.JMenuItem Item_PrintField;
+    private javax.swing.JMenuItem Item_PrintRecord;
+    private javax.swing.JMenuItem Item_Save;
+    private javax.swing.JMenuItem Item_SaveAs;
+    private javax.swing.JMenuItem Item_SetRecord;
     javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu Menu_Edit;
+    private javax.swing.JMenu Menu_Field;
     private javax.swing.JMenu Menu_File;
     private javax.swing.JMenu Menu_Help;
+    private javax.swing.JMenu Menu_Record;
     private javax.swing.JMenu Menu_View;
     private javax.swing.JMenu Menu_Window;
-    private Principal.Menu.Elements.DeskPanel deskPanel1;
+    private Principal.Menu.Elements.DeskPanel deskPanel2;
     private javax.swing.JPanel jPanel1;
     private Principal.Menu.Elements.NavigationPanel navigationPanel1;
     private Principal.Menu.Elements.StatusBar statusBar1;

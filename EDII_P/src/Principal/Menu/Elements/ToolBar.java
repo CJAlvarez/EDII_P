@@ -30,16 +30,17 @@ public class ToolBar extends javax.swing.JPanel {
         setBackground(new java.awt.Color(84, 49, 55));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
+        setPreferredSize(new java.awt.Dimension(508, 45));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGap(0, 508, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGap(0, 75, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
