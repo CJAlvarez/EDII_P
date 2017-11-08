@@ -35,7 +35,7 @@ public class Work_Menu extends javax.swing.JFrame {
         navigationPanel1 = new Principal.Menu.Elements.NavigationPanel();
         tabBar1 = new Principal.Menu.Elements.TabBar();
         statusBar1 = new Principal.Menu.Elements.StatusBar();
-        deskPanel2 = new Principal.Menu.Elements.DeskPanel();
+        deskPanel = new Principal.Menu.Elements.DeskPanel();
         toolBar1 = new Principal.Menu.Elements.ToolBar();
         MenuBar = new javax.swing.JMenuBar();
         Menu_File = new javax.swing.JMenu();
@@ -49,7 +49,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_Field = new javax.swing.JMenu();
         Item_NewField = new javax.swing.JMenuItem();
         Item_PrintField = new javax.swing.JMenuItem();
-        Item_EditField = new javax.swing.JMenuItem();
         Item_DeleteField = new javax.swing.JMenuItem();
         Menu_Record = new javax.swing.JMenu();
         Item_SetRecord = new javax.swing.JMenuItem();
@@ -58,6 +57,7 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_FindRecord = new javax.swing.JMenuItem();
         Item_DeleteRecord = new javax.swing.JMenuItem();
         Menu_View = new javax.swing.JMenu();
+        Item_ChangeTable = new javax.swing.JMenuItem();
         Menu_Window = new javax.swing.JMenu();
         Menu_Help = new javax.swing.JMenu();
 
@@ -108,7 +108,7 @@ public class Work_Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(navigationPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(deskPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                            .addComponent(deskPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
                             .addComponent(tabBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 0, 0))
         );
@@ -120,7 +120,7 @@ public class Work_Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(tabBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, 0)
-                        .addComponent(deskPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
+                        .addComponent(deskPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)))
                 .addComponent(statusBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -128,7 +128,7 @@ public class Work_Menu extends javax.swing.JFrame {
         toolBar1.setLayout(toolBar1Layout);
         toolBar1Layout.setHorizontalGroup(
             toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 856, Short.MAX_VALUE)
         );
         toolBar1Layout.setVerticalGroup(
             toolBar1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,6 +164,11 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_New.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         Item_New.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Window/New_20.png"))); // NOI18N
         Item_New.setText("Nuevo");
+        Item_New.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_NewActionPerformed(evt);
+            }
+        });
         Menu_File.add(Item_New);
 
         Item_Open.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
@@ -173,6 +178,11 @@ public class Work_Menu extends javax.swing.JFrame {
 
         Item_Save.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_MASK));
         Item_Save.setText("Guardar");
+        Item_Save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_SaveActionPerformed(evt);
+            }
+        });
         Menu_File.add(Item_Save);
 
         Item_SaveAs.setText("Guardar como...");
@@ -180,10 +190,20 @@ public class Work_Menu extends javax.swing.JFrame {
 
         Item_Close.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         Item_Close.setText("Cerrar");
+        Item_Close.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_CloseActionPerformed(evt);
+            }
+        });
         Menu_File.add(Item_Close);
 
         Item_Exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_MASK));
         Item_Exit.setText("Salir");
+        Item_Exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_ExitActionPerformed(evt);
+            }
+        });
         Menu_File.add(Item_Exit);
 
         MenuBar.add(Menu_File);
@@ -203,16 +223,31 @@ public class Work_Menu extends javax.swing.JFrame {
 
         Menu_Field.setText("Campo");
 
+        Item_NewField.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_MASK));
         Item_NewField.setText("Crear");
+        Item_NewField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_NewFieldActionPerformed(evt);
+            }
+        });
         Menu_Field.add(Item_NewField);
 
+        Item_PrintField.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
         Item_PrintField.setText("Listar");
+        Item_PrintField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_PrintFieldActionPerformed(evt);
+            }
+        });
         Menu_Field.add(Item_PrintField);
 
-        Item_EditField.setText("Modificar");
-        Menu_Field.add(Item_EditField);
-
+        Item_DeleteField.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.ALT_MASK));
         Item_DeleteField.setText("Borrar");
+        Item_DeleteField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_DeleteFieldActionPerformed(evt);
+            }
+        });
         Menu_Field.add(Item_DeleteField);
 
         Menu_Edit.add(Menu_Field);
@@ -250,6 +285,16 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_View.setFocusPainted(true);
         Menu_View.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         Menu_View.setOpaque(false);
+
+        Item_ChangeTable.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        Item_ChangeTable.setText("Cambiar Tabla");
+        Item_ChangeTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_ChangeTableActionPerformed(evt);
+            }
+        });
+        Menu_View.add(Item_ChangeTable);
+
         MenuBar.add(Menu_View);
 
         Menu_Window.setBackground(new java.awt.Color(55, 41, 40));
@@ -287,7 +332,7 @@ public class Work_Menu extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
-            .addComponent(toolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(toolBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -305,6 +350,38 @@ public class Work_Menu extends javax.swing.JFrame {
         //menuBar.setSize(this.getWidth(), 30);
         // dimension = this.getSize();
     }//GEN-LAST:event_jPanel1formComponentResized
+
+    private void Item_NewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_NewActionPerformed
+        deskPanel.newTable();
+    }//GEN-LAST:event_Item_NewActionPerformed
+
+    private void Item_NewFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_NewFieldActionPerformed
+        deskPanel.plus();
+    }//GEN-LAST:event_Item_NewFieldActionPerformed
+
+    private void Item_DeleteFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_DeleteFieldActionPerformed
+        deskPanel.less();
+    }//GEN-LAST:event_Item_DeleteFieldActionPerformed
+
+    private void Item_ChangeTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_ChangeTableActionPerformed
+        deskPanel.changeTable();
+    }//GEN-LAST:event_Item_ChangeTableActionPerformed
+
+    private void Item_CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_CloseActionPerformed
+        deskPanel.close();
+    }//GEN-LAST:event_Item_CloseActionPerformed
+
+    private void Item_ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_ExitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_Item_ExitActionPerformed
+
+    private void Item_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_SaveActionPerformed
+        deskPanel.save();
+    }//GEN-LAST:event_Item_SaveActionPerformed
+
+    private void Item_PrintFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_PrintFieldActionPerformed
+        deskPanel.print();
+    }//GEN-LAST:event_Item_PrintFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,10 +434,10 @@ public class Work_Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Item_ChangeTable;
     private javax.swing.JMenuItem Item_Close;
     private javax.swing.JMenuItem Item_DeleteField;
     private javax.swing.JMenuItem Item_DeleteRecord;
-    private javax.swing.JMenuItem Item_EditField;
     private javax.swing.JMenuItem Item_EditRecord;
     private javax.swing.JMenuItem Item_Exit;
     private javax.swing.JMenuItem Item_FindRecord;
@@ -380,7 +457,7 @@ public class Work_Menu extends javax.swing.JFrame {
     private javax.swing.JMenu Menu_Record;
     private javax.swing.JMenu Menu_View;
     private javax.swing.JMenu Menu_Window;
-    private Principal.Menu.Elements.DeskPanel deskPanel2;
+    private Principal.Menu.Elements.DeskPanel deskPanel;
     private javax.swing.JPanel jPanel1;
     private Principal.Menu.Elements.NavigationPanel navigationPanel1;
     private Principal.Menu.Elements.StatusBar statusBar1;

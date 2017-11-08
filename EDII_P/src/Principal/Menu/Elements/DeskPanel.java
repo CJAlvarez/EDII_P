@@ -5,6 +5,10 @@
  */
 package Principal.Menu.Elements;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author CJ
@@ -16,6 +20,10 @@ public class DeskPanel extends javax.swing.JPanel {
      */
     public DeskPanel() {
         initComponents();
+        fields = new Object[1];
+        design = new Object[]{"Llave", "Campo", "Tipo", "Longitud"};
+        desk = true;
+        close();
     }
 
     /**
@@ -27,8 +35,25 @@ public class DeskPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Table_Design = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        Table_Desk = new javax.swing.JTable();
+
+        Table_Design.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        Table_Design.setDoubleBuffered(true);
+        Table_Design.setDragEnabled(true);
+        Table_Design.setFocusCycleRoot(true);
+        Table_Design.setFocusTraversalPolicyProvider(true);
+        Table_Design.setInheritsPopupMenu(true);
+        jScrollPane2.setViewportView(Table_Design);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setAutoscrolls(true);
@@ -37,7 +62,7 @@ public class DeskPanel extends javax.swing.JPanel {
         setInheritsPopupMenu(true);
         setMinimumSize(new java.awt.Dimension(100, 100));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Table_Desk.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -45,12 +70,12 @@ public class DeskPanel extends javax.swing.JPanel {
 
             }
         ));
-        jTable1.setDoubleBuffered(true);
-        jTable1.setDragEnabled(true);
-        jTable1.setFocusCycleRoot(true);
-        jTable1.setFocusTraversalPolicyProvider(true);
-        jTable1.setInheritsPopupMenu(true);
-        jScrollPane1.setViewportView(jTable1);
+        Table_Desk.setDoubleBuffered(true);
+        Table_Desk.setDragEnabled(true);
+        Table_Desk.setFocusCycleRoot(true);
+        Table_Desk.setFocusTraversalPolicyProvider(true);
+        Table_Desk.setInheritsPopupMenu(true);
+        jScrollPane1.setViewportView(Table_Desk);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -60,13 +85,89 @@ public class DeskPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 377, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public void changeTable() {
+        if (desk == false) {
+            fields = new Object[Table_Desk.getRowCount()];
+            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
+                fields[i] = Table_Desk.getValueAt(i, 1);
+            }
+        }
+        TableModel temp = Table_Desk.getModel();
+        DefaultTableModel model = (DefaultTableModel) Table_Design.getModel();
+        if (desk == false) {
+            model.setColumnIdentifiers(fields);
+        }
+        Table_Desk.setModel(model);
+        Table_Design.setModel(temp);
+        desk = !desk;
+        System.out.println("CAMBIO");
+    }
+
+    public void plus() {
+        DefaultTableModel model = (DefaultTableModel) Table_Desk.getModel();
+        model.addRow(new Object[]{""});
+        Table_Desk.setModel(model);
+        System.out.println("PLUS");
+    }
+
+    public void less() {
+        if (Table_Desk.getRowCount() > 0) {
+            DefaultTableModel model = (DefaultTableModel) Table_Desk.getModel();
+            if (Table_Desk.getSelectedRow() < 0) {
+                model.removeRow(Table_Desk.getRowCount() - 1);
+            } else {
+                model.removeRow(Table_Desk.getSelectedRow());
+            }
+            Table_Desk.setModel(model);
+            System.out.println("LESS");
+        }
+    }
+
+    // TEMPORAL
+    public void newTable() {
+        Table_Design.setModel(new DefaultTableModel(1, 3));
+        Table_Desk.setModel(new DefaultTableModel(1, 1));
+        DefaultTableModel model = (DefaultTableModel) Table_Design.getModel();
+        model.setColumnIdentifiers(design);
+        Table_Design.setModel(model);
+        desk = true;
+        changeTable();
+        System.out.println("NEW");
+    }
+
+    public void close() {
+        Table_Design.setModel(new DefaultTableModel(0, 0));
+        Table_Desk.setModel(new DefaultTableModel(0, 0));
+        System.out.println("Close");
+    }
+
+    public void save() {
+
+        System.out.println("Save");
+    }
+
+    public void print() {
+        
+        System.out.println("Print");
+    }
+    
+    public String TableToString() {
+        return "";
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Table_Design;
+    private javax.swing.JTable Table_Desk;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
+    //VARIABLE
+    private boolean desk;
+    private Object[] fields;
+    private Object[] design;
+
 }
