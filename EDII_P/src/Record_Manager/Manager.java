@@ -20,20 +20,40 @@ import java.util.logging.Logger;
  */
 public class Manager {
 
+    FileWriter write;
+    BufferedWriter bufferW;
+    FileReader read;
+    BufferedReader bufferR;
+
     char delimiter;
-    String path;
+    String pathW;
+    String pathR;
     int size;
 
-    public int Write(String[] thing) throws IOException {
-        try (FileWriter write_to = new FileWriter(path)) {
-            BufferedWriter br = null;
-            br = new BufferedWriter(write_to, size);
-            br.write(delimiter + "");
+    public Manager() {
+    }
+
+    public Manager(char delimiter, String path, int size) throws IOException {
+        this.delimiter = delimiter;
+        this.pathW = path;
+        this.pathR = path;
+        this.size = size;
+        write = new FileWriter(pathW);
+        bufferW = new BufferedWriter(write, size);
+        //read = new FileReader(pathR);
+        //bufferR = new BufferedReader(read, size);
+
+    }
+
+    public int Write(String[] thing, int amount) throws IOException {
+        try {
+            bufferW.write(amount + "");
+            bufferW.write(delimiter + "");
             for (int i = 0; i < thing.length; i++) {
-                br.write(thing[i] + delimiter);
+                bufferW.write(thing[i] + delimiter);
             }
-            br.close();
-            write_to.close();
+            bufferW.close();
+            write.close();
         } catch (Exception e) {
             System.out.println(e.getMessage() + "something went wrong");
             return 1;
@@ -47,7 +67,7 @@ public class Manager {
         FileReader read_from;
         ArrayList<String> readed = new ArrayList();
         try {
-            read_from = new FileReader(path);
+            read_from = new FileReader(pathW);
             br = new BufferedReader(read_from, size);
             try {
                 String temp;
@@ -69,6 +89,30 @@ public class Manager {
         return null;
     }
 
+    public boolean close() throws IOException {
+        write.close();
+        bufferW.close();
+        //read.close();
+        //bufferR.close();
+        return true;
+    }
+
+    public char getDelimiter() {
+        return delimiter;
+    }
+
+    public void setDelimiter(char delimiter) {
+        this.delimiter = delimiter;
+    }
+
+    public String getPath() {
+        return pathW;
+    }
+
+    public void setPath(String path) {
+        this.pathW = path;
+    }
+
     public int getSize() {
         return size;
     }
@@ -77,13 +121,10 @@ public class Manager {
         this.size = size;
     }
 
-    public Manager(char delimiter, String path, int size) {
-        this.delimiter = delimiter;
-        this.path = path;
-        this.size = size;
+    public void reset() throws IOException {
+        write = new FileWriter(pathW);
+        bufferW = new BufferedWriter(write, size);
+        //read = new FileReader(pathR);
+        //bufferR = new BufferedReader(read, size);   
     }
-
-    public Manager() {
-    }
-
 }

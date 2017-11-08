@@ -5,6 +5,10 @@
  */
 package Principal.Menu.Elements;
 
+import Record_Manager.Manager;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -145,18 +149,79 @@ public class DeskPanel extends javax.swing.JPanel {
         System.out.println("Close");
     }
 
-    public void save() {
+    public void save(String name) {
+        int size = (fields.length * 4);
 
-        System.out.println("Save");
+        if (desk) {
+            size += (Table_Desk.getRowCount() * Table_Desk.getColumnCount());
+        } else {
+            size += (Table_Design.getRowCount() * Table_Design.getColumnCount());
+        }
+        String[] toSave = new String[size];
+        int pos = 0;
+        if (desk) {
+            for (int i = 0; i < Table_Design.getRowCount(); i++) {
+                for (int k = 0; k < Table_Design.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Design.getValueAt(i, k);
+                    pos++;
+                }
+            }
+            for (int j = 0; j < Table_Desk.getRowCount(); j++) {
+                for (int k = 0; k < Table_Desk.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Desk.getValueAt(j, k);
+                    pos++;
+                }
+            }
+        } else {
+            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
+                for (int k = 0; k < Table_Desk.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Desk.getValueAt(i, k);
+                    pos++;
+                }
+            }
+            for (int j = 0; j < Table_Design.getRowCount(); j++) {
+                for (int k = 0; k < Table_Design.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Design.getValueAt(j, k);
+                    pos++;
+                }
+            }
+        }
+        try {
+            Record_Manager.Manager manager = new Manager('|', name + ".txt", 200);
+            manager.Write(toSave, fields.length);
+        } catch (Exception ex) {
+            System.out.println("ERROR");
+        }
+        System.out.println("SAVE");
     }
 
     public void print() {
-        
-        System.out.println("Print");
+        System.out.println(TableToString());
+        System.out.println("PRINT");
     }
-    
+
     public String TableToString() {
-        return "";
+        String stamp = "";
+        for (int i = 0; i < fields.length; i++) {
+            stamp += fields[i] + "\t|";
+        }
+        stamp += "\n";
+        if (desk) {
+            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
+                for (int j = 0; j < Table_Desk.getColumnCount(); j++) {
+                    stamp += Table_Desk.getValueAt(i, j) + "\t|";
+                }
+                stamp += "\n";
+            }
+        } else {
+            for (int i = 0; i < Table_Design.getRowCount(); i++) {
+                for (int j = 0; j < Table_Design.getColumnCount(); j++) {
+                    stamp += Table_Design.getValueAt(i, j) + "\t|";
+                }
+                stamp += "\n";
+            }
+        }
+        return stamp;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

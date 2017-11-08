@@ -7,6 +7,7 @@ package Principal;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -368,6 +369,7 @@ public class Work_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Item_ChangeTableActionPerformed
 
     private void Item_CloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_CloseActionPerformed
+        deskPanel.save("temporal");
         deskPanel.close();
     }//GEN-LAST:event_Item_CloseActionPerformed
 
@@ -376,7 +378,7 @@ public class Work_Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_Item_ExitActionPerformed
 
     private void Item_SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_SaveActionPerformed
-        deskPanel.save();
+        deskPanel.save(JOptionPane.showInputDialog("Título"));
     }//GEN-LAST:event_Item_SaveActionPerformed
 
     private void Item_PrintFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_PrintFieldActionPerformed

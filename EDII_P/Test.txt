@@ -1,0 +1,1 @@
+3|Si|Nombre|Cadena|100|no|Apellido|Cadena|100|no|Numero|Numero|50|Cj|Alvarez|1|Rojo|Izaguirre|2|Juan|Perez|3|
