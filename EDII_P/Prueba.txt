@@ -1,0 +1,1 @@
+3|Si|Nombre|Cadena|100||Apellido|null|null||Numero|null|null|Cj|Alvarez|1|Rojo|Lahos|2|Lopes|Cover|3|

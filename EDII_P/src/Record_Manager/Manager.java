@@ -52,10 +52,8 @@ public class Manager {
             for (int i = 0; i < thing.length; i++) {
                 bufferW.write(thing[i] + delimiter);
             }
-            bufferW.close();
-            write.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage() + "something went wrong");
+            System.out.println("ERROR_MANAGER_WRITE");
             return 1;
         }
         return 0;

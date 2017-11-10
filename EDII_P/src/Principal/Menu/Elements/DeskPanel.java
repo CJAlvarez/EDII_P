@@ -25,8 +25,9 @@ public class DeskPanel extends javax.swing.JPanel {
     public DeskPanel() {
         initComponents();
         fields = new Object[1];
-        design = new Object[]{"Llave", "Campo", "Tipo", "Longitud"};
+        design = new Object[]{"key", "Campo", "Tipo", "Longitud"};
         desk = true;
+        key = -1;
         close();
     }
 
@@ -40,24 +41,40 @@ public class DeskPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        Table_Design = new javax.swing.JTable();
+        Table_Background = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
-        Table_Desk = new javax.swing.JTable();
+        Table_Foreground = new javax.swing.JTable();
 
-        Table_Design.setModel(new javax.swing.table.DefaultTableModel(
+        Table_Background.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-
+                "Llave", "Nombre", "Tipo", "Tamaño"
             }
-        ));
-        Table_Design.setDoubleBuffered(true);
-        Table_Design.setDragEnabled(true);
-        Table_Design.setFocusCycleRoot(true);
-        Table_Design.setFocusTraversalPolicyProvider(true);
-        Table_Design.setInheritsPopupMenu(true);
-        jScrollPane2.setViewportView(Table_Design);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Table_Background.setCellSelectionEnabled(true);
+        Table_Background.setDoubleBuffered(true);
+        Table_Background.setDragEnabled(true);
+        Table_Background.setFocusCycleRoot(true);
+        Table_Background.setFocusTraversalPolicyProvider(true);
+        Table_Background.setInheritsPopupMenu(true);
+        jScrollPane2.setViewportView(Table_Background);
 
         setBackground(new java.awt.Color(255, 255, 255));
         setAutoscrolls(true);
@@ -66,7 +83,7 @@ public class DeskPanel extends javax.swing.JPanel {
         setInheritsPopupMenu(true);
         setMinimumSize(new java.awt.Dimension(100, 100));
 
-        Table_Desk.setModel(new javax.swing.table.DefaultTableModel(
+        Table_Foreground.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -74,12 +91,17 @@ public class DeskPanel extends javax.swing.JPanel {
 
             }
         ));
-        Table_Desk.setDoubleBuffered(true);
-        Table_Desk.setDragEnabled(true);
-        Table_Desk.setFocusCycleRoot(true);
-        Table_Desk.setFocusTraversalPolicyProvider(true);
-        Table_Desk.setInheritsPopupMenu(true);
-        jScrollPane1.setViewportView(Table_Desk);
+        Table_Foreground.setDoubleBuffered(true);
+        Table_Foreground.setDragEnabled(true);
+        Table_Foreground.setFocusCycleRoot(true);
+        Table_Foreground.setFocusTraversalPolicyProvider(true);
+        Table_Foreground.setInheritsPopupMenu(true);
+        Table_Foreground.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                Table_ForegroundPropertyChange(evt);
+            }
+        });
+        jScrollPane1.setViewportView(Table_Foreground);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -93,59 +115,71 @@ public class DeskPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    public void changeTable() {
+    private void Table_ForegroundPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Table_ForegroundPropertyChange
+        if (desk) {
+            
+        } else {
+        }
+    }//GEN-LAST:event_Table_ForegroundPropertyChange
+
+    public String changeTable() {
         if (desk == false) {
-            fields = new Object[Table_Desk.getRowCount()];
-            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
-                fields[i] = Table_Desk.getValueAt(i, 1);
+            fields = new Object[Table_Foreground.getRowCount()];
+            for (int i = 0; i < Table_Foreground.getRowCount(); i++) {
+                fields[i] = Table_Foreground.getValueAt(i, 1);
             }
         }
-        TableModel temp = Table_Desk.getModel();
-        DefaultTableModel model = (DefaultTableModel) Table_Design.getModel();
+        TableModel temp = Table_Foreground.getModel();
+        DefaultTableModel model = (DefaultTableModel) Table_Background.getModel();
         if (desk == false) {
             model.setColumnIdentifiers(fields);
         }
-        Table_Desk.setModel(model);
-        Table_Design.setModel(temp);
+        Table_Foreground.setModel(model);
+        Table_Background.setModel(temp);
         desk = !desk;
         System.out.println("CAMBIO");
+        if (desk) {
+            return "Tabla de registro";
+        } else {
+            return "Tabla de diseño";
+        }
     }
 
     public void plus() {
-        DefaultTableModel model = (DefaultTableModel) Table_Desk.getModel();
+        DefaultTableModel model = (DefaultTableModel) Table_Foreground.getModel();
         model.addRow(new Object[]{""});
-        Table_Desk.setModel(model);
+        Table_Foreground.setModel(model);
         System.out.println("PLUS");
     }
 
     public void less() {
-        if (Table_Desk.getRowCount() > 0) {
-            DefaultTableModel model = (DefaultTableModel) Table_Desk.getModel();
-            if (Table_Desk.getSelectedRow() < 0) {
-                model.removeRow(Table_Desk.getRowCount() - 1);
+        if (Table_Foreground.getRowCount() > 0) {
+            DefaultTableModel model = (DefaultTableModel) Table_Foreground.getModel();
+            if (Table_Foreground.getSelectedRow() < 0) {
+                model.removeRow(Table_Foreground.getRowCount() - 1);
             } else {
-                model.removeRow(Table_Desk.getSelectedRow());
+                model.removeRow(Table_Foreground.getSelectedRow());
             }
-            Table_Desk.setModel(model);
+            Table_Foreground.setModel(model);
             System.out.println("LESS");
         }
     }
 
     // TEMPORAL
     public void newTable() {
-        Table_Design.setModel(new DefaultTableModel(1, 3));
-        Table_Desk.setModel(new DefaultTableModel(1, 1));
-        DefaultTableModel model = (DefaultTableModel) Table_Design.getModel();
+        Table_Background.setModel(new DefaultTableModel(1, 3));
+        Table_Foreground.setModel(new DefaultTableModel(1, 1));
+        DefaultTableModel model = (DefaultTableModel) Table_Background.getModel();
         model.setColumnIdentifiers(design);
-        Table_Design.setModel(model);
+        Table_Background.setModel(model);
         desk = true;
         changeTable();
         System.out.println("NEW");
     }
 
     public void close() {
-        Table_Design.setModel(new DefaultTableModel(0, 0));
-        Table_Desk.setModel(new DefaultTableModel(0, 0));
+        Table_Background.setModel(new DefaultTableModel(0, 0));
+        Table_Foreground.setModel(new DefaultTableModel(0, 0));
         System.out.println("Close");
     }
 
@@ -153,35 +187,35 @@ public class DeskPanel extends javax.swing.JPanel {
         int size = (fields.length * 4);
 
         if (desk) {
-            size += (Table_Desk.getRowCount() * Table_Desk.getColumnCount());
+            size += (Table_Foreground.getRowCount() * Table_Foreground.getColumnCount());
         } else {
-            size += (Table_Design.getRowCount() * Table_Design.getColumnCount());
+            size += (Table_Background.getRowCount() * Table_Background.getColumnCount());
         }
         String[] toSave = new String[size];
         int pos = 0;
         if (desk) {
-            for (int i = 0; i < Table_Design.getRowCount(); i++) {
-                for (int k = 0; k < Table_Design.getColumnCount(); k++) {
-                    toSave[pos] = (String) Table_Design.getValueAt(i, k);
+            for (int i = 0; i < Table_Background.getRowCount(); i++) {
+                for (int k = 0; k < Table_Background.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Background.getValueAt(i, k);
                     pos++;
                 }
             }
-            for (int j = 0; j < Table_Desk.getRowCount(); j++) {
-                for (int k = 0; k < Table_Desk.getColumnCount(); k++) {
-                    toSave[pos] = (String) Table_Desk.getValueAt(j, k);
+            for (int j = 0; j < Table_Foreground.getRowCount(); j++) {
+                for (int k = 0; k < Table_Foreground.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Foreground.getValueAt(j, k);
                     pos++;
                 }
             }
         } else {
-            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
-                for (int k = 0; k < Table_Desk.getColumnCount(); k++) {
-                    toSave[pos] = (String) Table_Desk.getValueAt(i, k);
+            for (int i = 0; i < Table_Foreground.getRowCount(); i++) {
+                for (int k = 0; k < Table_Foreground.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Foreground.getValueAt(i, k);
                     pos++;
-                }
+                }   
             }
-            for (int j = 0; j < Table_Design.getRowCount(); j++) {
-                for (int k = 0; k < Table_Design.getColumnCount(); k++) {
-                    toSave[pos] = (String) Table_Design.getValueAt(j, k);
+            for (int j = 0; j < Table_Background.getRowCount(); j++) {
+                for (int k = 0; k < Table_Background.getColumnCount(); k++) {
+                    toSave[pos] = (String) Table_Background.getValueAt(j, k);
                     pos++;
                 }
             }
@@ -189,8 +223,9 @@ public class DeskPanel extends javax.swing.JPanel {
         try {
             Record_Manager.Manager manager = new Manager('|', name + ".txt", 200);
             manager.Write(toSave, fields.length);
+            manager.close();
         } catch (Exception ex) {
-            System.out.println("ERROR");
+            System.out.println("ERROR_DESKPANEL_SAVE");
         }
         System.out.println("SAVE");
     }
@@ -207,16 +242,16 @@ public class DeskPanel extends javax.swing.JPanel {
         }
         stamp += "\n";
         if (desk) {
-            for (int i = 0; i < Table_Desk.getRowCount(); i++) {
-                for (int j = 0; j < Table_Desk.getColumnCount(); j++) {
-                    stamp += Table_Desk.getValueAt(i, j) + "\t|";
+            for (int i = 0; i < Table_Foreground.getRowCount(); i++) {
+                for (int j = 0; j < Table_Foreground.getColumnCount(); j++) {
+                    stamp += Table_Foreground.getValueAt(i, j) + "\t|";
                 }
                 stamp += "\n";
             }
         } else {
-            for (int i = 0; i < Table_Design.getRowCount(); i++) {
-                for (int j = 0; j < Table_Design.getColumnCount(); j++) {
-                    stamp += Table_Design.getValueAt(i, j) + "\t|";
+            for (int i = 0; i < Table_Background.getRowCount(); i++) {
+                for (int j = 0; j < Table_Background.getColumnCount(); j++) {
+                    stamp += Table_Background.getValueAt(i, j) + "\t|";
                 }
                 stamp += "\n";
             }
@@ -225,8 +260,8 @@ public class DeskPanel extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Table_Design;
-    private javax.swing.JTable Table_Desk;
+    private javax.swing.JTable Table_Background;
+    private javax.swing.JTable Table_Foreground;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
@@ -234,5 +269,5 @@ public class DeskPanel extends javax.swing.JPanel {
     private boolean desk;
     private Object[] fields;
     private Object[] design;
-
+    private int key;
 }
