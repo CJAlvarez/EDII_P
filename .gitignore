@@ -19,3 +19,7 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /EDII_P/build/
+EDII_P/libs/AbsoluteLayout.jar
+EDII_P/nbproject/private/private.properties
+EDII_P/nbproject/private/private.xml
+EDII_P/nbproject/private/private.properties
