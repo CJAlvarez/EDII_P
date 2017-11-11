@@ -57,6 +57,9 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_PrintRecord = new javax.swing.JMenuItem();
         Item_FindRecord = new javax.swing.JMenuItem();
         Item_DeleteRecord = new javax.swing.JMenuItem();
+        Menu_Export = new javax.swing.JMenu();
+        Item_Excel = new javax.swing.JMenuItem();
+        Item_Xml = new javax.swing.JMenuItem();
         Menu_View = new javax.swing.JMenu();
         Item_ChangeTable = new javax.swing.JMenuItem();
         Menu_Window = new javax.swing.JMenu();
@@ -272,6 +275,21 @@ public class Work_Menu extends javax.swing.JFrame {
 
         Menu_Edit.add(Menu_Record);
 
+        Menu_Export.setText("Exportar");
+
+        Item_Excel.setText("Excel");
+        Item_Excel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_ExcelActionPerformed(evt);
+            }
+        });
+        Menu_Export.add(Item_Excel);
+
+        Item_Xml.setText("Xml");
+        Menu_Export.add(Item_Xml);
+
+        Menu_Edit.add(Menu_Export);
+
         MenuBar.add(Menu_Edit);
 
         Menu_View.setBackground(new java.awt.Color(55, 41, 40));
@@ -385,6 +403,10 @@ public class Work_Menu extends javax.swing.JFrame {
         deskPanel.print();
     }//GEN-LAST:event_Item_PrintFieldActionPerformed
 
+    private void Item_ExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_ExcelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Item_ExcelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -441,6 +463,7 @@ public class Work_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem Item_DeleteField;
     private javax.swing.JMenuItem Item_DeleteRecord;
     private javax.swing.JMenuItem Item_EditRecord;
+    private javax.swing.JMenuItem Item_Excel;
     private javax.swing.JMenuItem Item_Exit;
     private javax.swing.JMenuItem Item_FindRecord;
     private javax.swing.JMenuItem Item_New;
@@ -451,8 +474,10 @@ public class Work_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem Item_Save;
     private javax.swing.JMenuItem Item_SaveAs;
     private javax.swing.JMenuItem Item_SetRecord;
+    private javax.swing.JMenuItem Item_Xml;
     javax.swing.JMenuBar MenuBar;
     private javax.swing.JMenu Menu_Edit;
+    private javax.swing.JMenu Menu_Export;
     private javax.swing.JMenu Menu_Field;
     private javax.swing.JMenu Menu_File;
     private javax.swing.JMenu Menu_Help;
