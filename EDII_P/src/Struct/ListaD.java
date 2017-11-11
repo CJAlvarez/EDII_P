@@ -72,7 +72,7 @@ public class ListaD<T extends Object> implements Cloneable, Serializable {
         } // Desde el inicio.
         else if ((size / 2) >= n) {
             current = first;
-            for (int i = 0; i < track; i++) {
+            for (int i = 0; i < (size / 2); i++) {
                 current = current.getNext();
             }
             cursor++;
@@ -89,3 +89,6 @@ public class ListaD<T extends Object> implements Cloneable, Serializable {
     }
 
 }
+// TensorFLow
+// Python
+// Encok
