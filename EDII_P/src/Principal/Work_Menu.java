@@ -5,6 +5,7 @@
  */
 package Principal;
 
+import Desk.XML_Manager;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
@@ -163,7 +164,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_File.setFocusCycleRoot(true);
         Menu_File.setFocusPainted(true);
         Menu_File.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Menu_File.setOpaque(false);
 
         Item_New.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_MASK));
         Item_New.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icon/Window/New_20.png"))); // NOI18N
@@ -223,7 +223,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_Edit.setFocusCycleRoot(true);
         Menu_Edit.setFocusPainted(true);
         Menu_Edit.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Menu_Edit.setOpaque(false);
 
         Menu_Field.setText("Campo");
 
@@ -285,7 +284,13 @@ public class Work_Menu extends javax.swing.JFrame {
         });
         Menu_Export.add(Item_Excel);
 
+        Item_Xml.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         Item_Xml.setText("Xml");
+        Item_Xml.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_XmlActionPerformed(evt);
+            }
+        });
         Menu_Export.add(Item_Xml);
 
         Menu_Edit.add(Menu_Export);
@@ -303,7 +308,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_View.setFocusCycleRoot(true);
         Menu_View.setFocusPainted(true);
         Menu_View.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Menu_View.setOpaque(false);
 
         Item_ChangeTable.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
         Item_ChangeTable.setText("Cambiar Tabla");
@@ -327,7 +331,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_Window.setFocusCycleRoot(true);
         Menu_Window.setFocusPainted(true);
         Menu_Window.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Menu_Window.setOpaque(false);
         MenuBar.add(Menu_Window);
 
         Menu_Help.setBackground(new java.awt.Color(55, 41, 40));
@@ -341,7 +344,6 @@ public class Work_Menu extends javax.swing.JFrame {
         Menu_Help.setFocusCycleRoot(true);
         Menu_Help.setFocusPainted(true);
         Menu_Help.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        Menu_Help.setOpaque(false);
         MenuBar.add(Menu_Help);
 
         setJMenuBar(MenuBar);
@@ -406,6 +408,12 @@ public class Work_Menu extends javax.swing.JFrame {
     private void Item_ExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_ExcelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Item_ExcelActionPerformed
+
+    private void Item_XmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_XmlActionPerformed
+        // TODO add your handling code here:
+        XML_Manager xml = new XML_Manager();
+        xml.guardarArchivo();
+    }//GEN-LAST:event_Item_XmlActionPerformed
 
     /**
      * @param args the command line arguments
