@@ -22,45 +22,19 @@ public class File extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        browsePanel1 = new Principal.Menu.Elements.BrowsePanel();
-        filePanel1 = new Principal.Menu.Elements.FilePanel();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        browsePanel1.setBackground(new java.awt.Color(51, 0, 204));
-
-        javax.swing.GroupLayout browsePanel1Layout = new javax.swing.GroupLayout(browsePanel1);
-        browsePanel1.setLayout(browsePanel1Layout);
-        browsePanel1Layout.setHorizontalGroup(
-            browsePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
-        );
-        browsePanel1Layout.setVerticalGroup(
-            browsePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 333, Short.MAX_VALUE)
-        );
-
-        add(browsePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 450, -1));
-
-        filePanel1.setBackground(new java.awt.Color(0, 204, 0));
-
-        javax.swing.GroupLayout filePanel1Layout = new javax.swing.GroupLayout(filePanel1);
-        filePanel1.setLayout(filePanel1Layout);
-        filePanel1Layout.setHorizontalGroup(
-            filePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 140, Short.MAX_VALUE)
-        );
-        filePanel1Layout.setVerticalGroup(
-            filePanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
-
-        add(filePanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 400));
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Principal.Menu.Elements.BrowsePanel browsePanel1;
-    private Principal.Menu.Elements.FilePanel filePanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -88,8 +88,8 @@ public class Manager {
     }
 
     public boolean close() throws IOException {
-        write.close();
         bufferW.close();
+        write.close();
         //read.close();
         //bufferR.close();
         return true;
