@@ -7,8 +7,11 @@ package Desk;
 
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.ArrayList;
+import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamWriter;
 
 /**
  *
@@ -16,10 +19,36 @@ import java.util.ArrayList;
  */
 public class XML_Manager {
     private ArrayList listFields = new ArrayList();
-    private File archivoXML = new File("Campos.xml");
+    private File archivoXML = new File("Test.xml");
+    XMLOutputFactory xMLOutputFactory;
+    XMLStreamWriter xMLStreamWriter;
 
     public XML_Manager() {
+        xMLOutputFactory = XMLOutputFactory.newInstance();
     }
+    public void guardarCampo(String key, String nombre, String tipo, String longitud){
+        try {
+            xMLStreamWriter = xMLOutputFactory.createXMLStreamWriter(new FileOutputStream("Campos.xml"));
+            
+            xMLStreamWriter.writeStartDocument("utf-8", "1.0");
+            xMLStreamWriter.writeComment("Describe los Campos");
+            xMLStreamWriter.writeStartElement("Campos");
+            
+            xMLStreamWriter.writeStartElement("Campo");
+            xMLStreamWriter.writeAttribute("tipo", tipo);
+            xMLStreamWriter.writeCharacters(nombre);
+            xMLStreamWriter.writeEndElement();
+            
+            xMLStreamWriter.writeEndElement();
+            xMLStreamWriter.writeEndDocument();
+            
+            xMLStreamWriter.flush();
+            xMLStreamWriter.close();
+            
+        } catch (Exception e) {
+        }
+    }
+    
     public void setField(Object field){
         this.listFields.add(field);
     }

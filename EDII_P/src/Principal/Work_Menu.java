@@ -412,7 +412,7 @@ public class Work_Menu extends javax.swing.JFrame {
     private void Item_XmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_XmlActionPerformed
         // TODO add your handling code here:
         XML_Manager xml = new XML_Manager();
-        xml.guardarArchivo();
+        xml.guardarCampo("1", "Edad", "int", "10");
     }//GEN-LAST:event_Item_XmlActionPerformed
 
     /**
