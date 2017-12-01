@@ -5,6 +5,7 @@
  */
 package Principal;
 
+import Desk.Excel_Manager;
 import Desk.XML_Manager;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -407,12 +408,18 @@ public class Work_Menu extends javax.swing.JFrame {
 
     private void Item_ExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_ExcelActionPerformed
         // TODO add your handling code here:
+        //Prueba
+        String nombreCampo = "Nombre";
+        String dato = "Daniel";
+        Excel_Manager writeExcel = new Excel_Manager();
+        writeExcel.exportarCampo(nombreCampo, dato);
     }//GEN-LAST:event_Item_ExcelActionPerformed
 
     private void Item_XmlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_XmlActionPerformed
         // TODO add your handling code here:
+        //Prueba 
         XML_Manager xml = new XML_Manager();
-        xml.guardarCampo("1", "Edad", "int", "10");
+        xml.exportarCampo("1", "Edad", "int", "10");
     }//GEN-LAST:event_Item_XmlActionPerformed
 
     /**

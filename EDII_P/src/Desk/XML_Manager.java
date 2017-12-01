@@ -26,7 +26,7 @@ public class XML_Manager {
     public XML_Manager() {
         xMLOutputFactory = XMLOutputFactory.newInstance();
     }
-    public void guardarCampo(String key, String nombre, String tipo, String longitud){
+    public void exportarCampo(String key, String nombre, String tipo, String longitud){
         try {
             xMLStreamWriter = xMLOutputFactory.createXMLStreamWriter(new FileOutputStream("Campos.xml"));
             
