@@ -7,9 +7,14 @@ package Principal;
 
 import Desk.Excel_Manager;
 import Desk.XML_Manager;
+import Record_Manager.Manager;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.Arrays;
+import java.util.LinkedList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,6 +39,19 @@ public class Work_Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jd_agregarRegistro = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tablaRegistros = new javax.swing.JTable();
+        jb_addRegistro = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        menu_barRegistros = new javax.swing.JMenuBar();
+        jmenuRegistros = new javax.swing.JMenu();
+        item_guardarRegistro = new javax.swing.JMenuItem();
+        item_listarRegistros = new javax.swing.JMenuItem();
+        jd_listarRegistros = new javax.swing.JDialog();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaListar = new javax.swing.JTable();
+        jb_listar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         navigationPanel1 = new Principal.Menu.Elements.NavigationPanel();
         tabBar1 = new Principal.Menu.Elements.TabBar();
@@ -55,8 +73,8 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_DeleteField = new javax.swing.JMenuItem();
         Menu_Record = new javax.swing.JMenu();
         Item_SetRecord = new javax.swing.JMenuItem();
-        Item_EditRecord = new javax.swing.JMenuItem();
         Item_PrintRecord = new javax.swing.JMenuItem();
+        Item_EditRecord = new javax.swing.JMenuItem();
         Item_FindRecord = new javax.swing.JMenuItem();
         Item_DeleteRecord = new javax.swing.JMenuItem();
         Menu_Export = new javax.swing.JMenu();
@@ -66,6 +84,124 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_ChangeTable = new javax.swing.JMenuItem();
         Menu_Window = new javax.swing.JMenu();
         Menu_Help = new javax.swing.JMenu();
+
+        jd_agregarRegistro.setPreferredSize(new java.awt.Dimension(550, 400));
+
+        tablaRegistros.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Campo", "Campo", "Campo", "Campo"
+            }
+        ));
+        jScrollPane1.setViewportView(tablaRegistros);
+
+        jb_addRegistro.setText("Agregar Registros");
+        jb_addRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_addRegistroActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("Registros");
+
+        jmenuRegistros.setText("Archivo");
+
+        item_guardarRegistro.setText("Guardar Registros");
+        item_guardarRegistro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_guardarRegistroActionPerformed(evt);
+            }
+        });
+        jmenuRegistros.add(item_guardarRegistro);
+
+        item_listarRegistros.setText("Listar Registros");
+        item_listarRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                item_listarRegistrosActionPerformed(evt);
+            }
+        });
+        jmenuRegistros.add(item_listarRegistros);
+
+        menu_barRegistros.add(jmenuRegistros);
+
+        jd_agregarRegistro.setJMenuBar(menu_barRegistros);
+
+        javax.swing.GroupLayout jd_agregarRegistroLayout = new javax.swing.GroupLayout(jd_agregarRegistro.getContentPane());
+        jd_agregarRegistro.getContentPane().setLayout(jd_agregarRegistroLayout);
+        jd_agregarRegistroLayout.setHorizontalGroup(
+            jd_agregarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_agregarRegistroLayout.createSequentialGroup()
+                .addGroup(jd_agregarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_agregarRegistroLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_agregarRegistroLayout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(jb_addRegistro))
+                    .addGroup(jd_agregarRegistroLayout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+        jd_agregarRegistroLayout.setVerticalGroup(
+            jd_agregarRegistroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_agregarRegistroLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jb_addRegistro)
+                .addContainerGap(70, Short.MAX_VALUE))
+        );
+
+        tablaListar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Campo", "Campo", "Campo", "Campo"
+            }
+        ));
+        jScrollPane2.setViewportView(tablaListar);
+
+        jb_listar.setText("Listar");
+        jb_listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_listarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jd_listarRegistrosLayout = new javax.swing.GroupLayout(jd_listarRegistros.getContentPane());
+        jd_listarRegistros.getContentPane().setLayout(jd_listarRegistrosLayout);
+        jd_listarRegistrosLayout.setHorizontalGroup(
+            jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                .addGroup(jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(jb_listar)))
+                .addContainerGap(79, Short.MAX_VALUE))
+        );
+        jd_listarRegistrosLayout.setVerticalGroup(
+            jd_listarRegistrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_listarRegistrosLayout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(jb_listar)
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -258,14 +394,26 @@ public class Work_Menu extends javax.swing.JFrame {
 
         Menu_Record.setText("Registro");
 
+        Item_SetRecord.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.CTRL_MASK));
         Item_SetRecord.setText("Introducir");
+        Item_SetRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_SetRecordActionPerformed(evt);
+            }
+        });
         Menu_Record.add(Item_SetRecord);
+
+        Item_PrintRecord.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        Item_PrintRecord.setText("Listar");
+        Item_PrintRecord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_PrintRecordActionPerformed(evt);
+            }
+        });
+        Menu_Record.add(Item_PrintRecord);
 
         Item_EditRecord.setText("Modificar");
         Menu_Record.add(Item_EditRecord);
-
-        Item_PrintRecord.setText("Listar");
-        Menu_Record.add(Item_PrintRecord);
 
         Item_FindRecord.setText("Buscar");
         Menu_Record.add(Item_FindRecord);
@@ -422,6 +570,104 @@ public class Work_Menu extends javax.swing.JFrame {
         xml.exportarCampo("1", "Edad", "int", "10");
     }//GEN-LAST:event_Item_XmlActionPerformed
 
+    private void jb_addRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addRegistroActionPerformed
+        int pos;
+        int cantidadCampos = tablaRegistros.getModel().getColumnCount();
+        String[] toSave;
+        for (int fila = 0; fila < tablaRegistros.getModel().getRowCount(); fila++) {
+            pos = 0;
+            toSave = new String[cantidadCampos];
+            for (int columna = 0; columna < tablaRegistros.getModel().getColumnCount(); columna++) {
+                if (tablaRegistros.getModel().getValueAt(fila, columna) != null ) {
+                    toSave[pos]=tablaRegistros.getModel().getValueAt(fila, columna).toString();
+                    pos++;
+                    System.out.println("Pos: " +pos);
+                }
+            }
+            if (estaVacio(toSave) == false) {
+                listaRegistros.add(toSave);
+                System.out.println("Registro Vacio");
+            }
+        }
+        System.out.println("Registros Agregados: " +listaRegistros.size());
+        limpiarTabla(tablaRegistros);
+        JOptionPane.showMessageDialog(null, "Registros Agregados");
+    }//GEN-LAST:event_jb_addRegistroActionPerformed
+
+    private void item_guardarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_guardarRegistroActionPerformed
+        // TODO add your handling code here:
+        Manager manager = new Manager("Registros.txt");
+        manager.escribirRegistros(listaRegistros);
+        JOptionPane.showMessageDialog(null, "Archivo Guardado");
+    }//GEN-LAST:event_item_guardarRegistroActionPerformed
+
+    private void Item_SetRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_SetRecordActionPerformed
+        // TODO add your handling code here:
+        this.jd_agregarRegistro.setModal(true);
+        this.jd_agregarRegistro.pack();
+        this.jd_agregarRegistro.setLocationRelativeTo(this); 
+        this.jd_agregarRegistro.setVisible(true);
+    }//GEN-LAST:event_Item_SetRecordActionPerformed
+
+    private void item_listarRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item_listarRegistrosActionPerformed
+        // TODO add your handling code here:
+        Manager manager = new Manager("Registros.txt");
+        manager.leerRegistros();
+        for (Object registro : manager.getListaRegistros()) {
+            System.out.println(registro);
+        }
+        System.out.println("Size: " + manager.getListaRegistros().size());
+        //System.out.println(manager.getListaRecords().get(0).toString());
+    }//GEN-LAST:event_item_listarRegistrosActionPerformed
+
+    private void Item_PrintRecordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_PrintRecordActionPerformed
+        // TODO add your handling code here:
+        this.jd_listarRegistros.setModal(true);
+        this.jd_listarRegistros.pack();
+        this.jd_listarRegistros.setLocationRelativeTo(this); 
+        this.jd_listarRegistros.setVisible(true);
+    }//GEN-LAST:event_Item_PrintRecordActionPerformed
+
+    private void jb_listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_listarActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel dm = (DefaultTableModel) tablaListar.getModel();
+        int rowCount = dm.getRowCount();
+        //Remove rows one by one from the end of the table
+        for (int i = rowCount - 1; i >= 0; i--) {
+            dm.removeRow(i);
+        }
+        Manager m = new Manager("Registros.txt");
+        m.leerRegistros();
+        String data[];
+        String record;
+        for (Object registro : m.getListaRegistros()){
+            record = registro.toString();
+            data = record.split("\\|");
+            Object[] newrow = {data[0],
+                data[1],data[2],data[3]};
+            DefaultTableModel modelo =(DefaultTableModel)tablaListar.getModel();
+            modelo.addRow(data);
+        }
+    }//GEN-LAST:event_jb_listarActionPerformed
+    public void limpiarTabla(JTable tabla){
+        for (int i = 0; i < tabla.getRowCount(); i++) {
+            for (int j = 0; j < tabla.getColumnCount(); j++) {
+                tabla.setValueAt("", i, j);
+            }
+        }
+    }
+    public boolean estaVacio(String[] registro){
+        boolean empty = false;
+        for (int i = 0; i < registro.length; i++) {
+            if ((registro[i] == null) || (registro[i].trim().length() == 0)) {
+                empty = true;
+            }else{
+                empty =false;
+            }
+        }
+        return empty;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -500,10 +746,24 @@ public class Work_Menu extends javax.swing.JFrame {
     private javax.swing.JMenu Menu_View;
     private javax.swing.JMenu Menu_Window;
     private Principal.Menu.Elements.DeskPanel deskPanel;
+    private javax.swing.JMenuItem item_guardarRegistro;
+    private javax.swing.JMenuItem item_listarRegistros;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jb_addRegistro;
+    private javax.swing.JButton jb_listar;
+    private javax.swing.JDialog jd_agregarRegistro;
+    private javax.swing.JDialog jd_listarRegistros;
+    private javax.swing.JMenu jmenuRegistros;
+    private javax.swing.JMenuBar menu_barRegistros;
     private Principal.Menu.Elements.NavigationPanel navigationPanel1;
     private Principal.Menu.Elements.StatusBar statusBar1;
     private Principal.Menu.Elements.TabBar tabBar1;
+    private javax.swing.JTable tablaListar;
+    private javax.swing.JTable tablaRegistros;
     private Principal.Menu.Elements.ToolBar toolBar1;
     // End of variables declaration//GEN-END:variables
+    LinkedList<String[]> listaRegistros = new LinkedList();
 }
