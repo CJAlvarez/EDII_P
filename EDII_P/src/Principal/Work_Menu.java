@@ -66,6 +66,7 @@ public class Work_Menu extends javax.swing.JFrame {
         Item_SaveAs = new javax.swing.JMenuItem();
         Item_Close = new javax.swing.JMenuItem();
         Item_Exit = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         Menu_Edit = new javax.swing.JMenu();
         Menu_Field = new javax.swing.JMenu();
         Item_NewField = new javax.swing.JMenuItem();
@@ -346,6 +347,9 @@ public class Work_Menu extends javax.swing.JFrame {
             }
         });
         Menu_File.add(Item_Exit);
+
+        jMenuItem1.setText("jMenuItem1");
+        Menu_File.add(jMenuItem1);
 
         MenuBar.add(Menu_File);
 
@@ -749,6 +753,7 @@ public class Work_Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem item_guardarRegistro;
     private javax.swing.JMenuItem item_listarRegistros;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
