@@ -7,6 +7,7 @@ package Principal.Menu.Elements;
 
 import Record_Manager.Manager;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
@@ -117,7 +118,7 @@ public class DeskPanel extends javax.swing.JPanel {
 
     private void Table_ForegroundPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Table_ForegroundPropertyChange
         if (desk) {
-            
+
         } else {
         }
     }//GEN-LAST:event_Table_ForegroundPropertyChange
@@ -184,7 +185,7 @@ public class DeskPanel extends javax.swing.JPanel {
     }
 
     public void save(String name) {
-        int size = (fields.length * 4);
+        /*  int size = (fields.length * 4);
 
         if (desk) {
             size += (Table_Foreground.getRowCount() * Table_Foreground.getColumnCount());
@@ -219,7 +220,26 @@ public class DeskPanel extends javax.swing.JPanel {
                     pos++;
                 }
             }
+        }*/
+
+        ArrayList lista = new ArrayList();
+        int col = this.Table_Foreground.getModel().getColumnCount();
+        int filas = this.Table_Foreground.getModel().getRowCount();
+        for (int i = 0; i < filas; i++) {
+            for (int j = 0; j < col; j++) {
+                lista.add(this.Table_Foreground.getModel().getValueAt(i, j));
+
+            }
         }
+
+        String[] toSave = new String[lista.size()];
+        System.out.println(lista.size() + "*******************************************************************");
+        for (int i = 0; i < lista.size(); i++) {
+            toSave[i] = (String) lista.get(i);
+        }
+        
+        
+        
         try {
             Record_Manager.Manager manager = new Manager('|', name + ".txt", 200);
             manager.Write(toSave, fields.length);
