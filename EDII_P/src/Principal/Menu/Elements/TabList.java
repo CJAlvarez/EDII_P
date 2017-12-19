@@ -5,6 +5,10 @@
  */
 package Principal.Menu.Elements;
 
+import java.util.ArrayList;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author CJ
@@ -16,6 +20,7 @@ public class TabList extends javax.swing.JPanel {
      */
     public TabList() {
         initComponents();
+        index = new ArrayList();
     }
 
     /**
@@ -27,25 +32,90 @@ public class TabList extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(255, 51, 51));
+        jScrollPane1 = new javax.swing.JScrollPane();
+        list_Find = new javax.swing.JList<>();
+
+        setBackground(new java.awt.Color(255, 176, 176));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
         setFocusTraversalPolicyProvider(true);
         setInheritsPopupMenu(true);
 
+        jScrollPane1.setBorder(null);
+
+        list_Find.setBackground(new java.awt.Color(255, 176, 176));
+        list_Find.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        list_Find.setForeground(new java.awt.Color(51, 51, 51));
+        list_Find.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        list_Find.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        list_Find.setSelectionBackground(new java.awt.Color(255, 102, 102));
+        list_Find.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                list_FindMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(list_Find);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 158, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 324, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void list_FindMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_list_FindMouseClicked
+        try {
+            if (dP != null) {
+                if (list_Find.getSelectedIndex() <= list_Find.getMaxSelectionIndex() || list_Find.getSelectedIndex() >= list_Find.getMinSelectionIndex()) {
+                    if (dP.isDesk()) {
+                        dP.getTable_Foreground().setEditingRow(index.get(list_Find.getSelectedIndex()));
+                        dP.getTable_Foreground().setRowSelectionInterval(index.get(list_Find.getSelectedIndex()), index.get(list_Find.getSelectedIndex()));
+                        dP.getTable_Foreground().setRowSelectionAllowed(true);
+
+                    } else {
+                        dP.getTable_Background().setEditingRow(index.get(list_Find.getSelectedIndex()));
+                        dP.getTable_Background().setRowSelectionInterval(index.get(list_Find.getSelectedIndex()), index.get(list_Find.getSelectedIndex()));
+                        dP.getTable_Background().setRowSelectionAllowed(true);
+                    }
+                }
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_list_FindMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JList<String> list_Find;
     // End of variables declaration//GEN-END:variables
+    public ArrayList<Integer> index;
+    public DeskPanel dP;
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    public void setjScrollPane1(JScrollPane jScrollPane1) {
+        this.jScrollPane1 = jScrollPane1;
+    }
+
+    public JList<String> getList_Find() {
+        return list_Find;
+    }
+
+    public void setList_Find(JList<String> list_Find) {
+        this.list_Find = list_Find;
+    }
+
 }

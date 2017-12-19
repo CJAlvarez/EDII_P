@@ -5,6 +5,9 @@
  */
 package Principal.Menu.Elements;
 
+import Thread.Thread_Find;
+import javax.swing.JTextField;
+
 /**
  *
  * @author CJ
@@ -27,25 +30,48 @@ public class FilterBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(102, 0, 102));
+        textField_Find = new javax.swing.JTextField();
+
+        setBackground(new java.awt.Color(255, 176, 176));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
         setFocusTraversalPolicyProvider(true);
         setInheritsPopupMenu(true);
 
+        textField_Find.setBackground(new java.awt.Color(255, 176, 176));
+        textField_Find.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        textField_Find.setForeground(new java.awt.Color(55, 41, 40));
+        textField_Find.setText("Buscar...");
+        textField_Find.setBorder(null);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 176, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textField_Find, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 34, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textField_Find, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    public JTextField getTextField_Find() {
+        return textField_Find;
+    }
 
+    public void setTextField_Find(JTextField textField_Find) {
+        this.textField_Find = textField_Find;
+    }
+
+    public Thread_Find thread_Tree;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField textField_Find;
     // End of variables declaration//GEN-END:variables
 }

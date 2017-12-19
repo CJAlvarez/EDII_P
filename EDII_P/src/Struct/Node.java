@@ -1,18 +1,28 @@
 package Struct;
 
+import java.io.Serializable;
+
 /**
  *
  * @author CJ
  */
-public class Node {
+public class Node implements Serializable {
 
-    public int dato;
-    public Node next;
-    public Node ant;
+    public Page container;
+    public int value;
+    public int reference;
+    public Page left;
+    public Page right;
 
-    public Node(int a) {
-        this.dato = a;
-        this.next = null;
-        this.ant = null;
+
+    public Node(Page container, int value) {
+        this.container = container;
+        this.value = value;
     }
+
+    @Override
+    public String toString() {
+        return value + "<" + reference + "> L: " + left + " - R: " + right;
+    }
+
 }

@@ -1,0 +1,1 @@
+2|si|nombre|texto|10|no|Edad|numero|3|CJ\       |171\|Eduar\    |15\|

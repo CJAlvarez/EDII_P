@@ -218,7 +218,11 @@ public class Tree implements Serializable {
     @Override
     public String toString() {
         String data = "";
-        data += content + " [" + value + "] { ";
+        if (content instanceof Object[]) {
+            data += ((Object[]) content)[0] + " [" + ((Object[]) content)[1] + "] { ";
+        } else {
+            data += content + " [" + value + "] { ";
+        }
         for (int i = 0; i < children.size(); i++) {
             data += children.get(i).toString() + ", ";
         }

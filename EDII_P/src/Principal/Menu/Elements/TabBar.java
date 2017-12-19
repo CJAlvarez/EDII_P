@@ -5,6 +5,8 @@
  */
 package Principal.Menu.Elements;
 
+import java.awt.Color;
+
 /**
  *
  * @author CJ
@@ -16,6 +18,11 @@ public class TabBar extends javax.swing.JPanel {
      */
     public TabBar() {
         initComponents();
+        textPanel.setForeground(Color.WHITE);
+    }
+
+    public void change(String s) {
+        textPanel.setText(s);
     }
 
     /**
@@ -27,6 +34,8 @@ public class TabBar extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        textPanel = new javax.swing.JLabel();
+
         setBackground(new java.awt.Color(191, 69, 108));
         setAutoscrolls(true);
         setFocusCycleRoot(true);
@@ -37,15 +46,18 @@ public class TabBar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 723, Short.MAX_VALUE)
+            .addComponent(textPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 723, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 39, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel textPanel;
     // End of variables declaration//GEN-END:variables
 }

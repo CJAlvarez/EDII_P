@@ -1,1 +1,0 @@
-1|yae|Nombre|int|10|null|
