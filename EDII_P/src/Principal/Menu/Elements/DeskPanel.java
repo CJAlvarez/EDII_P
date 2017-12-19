@@ -1,6 +1,5 @@
 package Principal.Menu.Elements;
 
-<<<<<<< HEAD
 import Thread.Thread_Save;
 import Thread.Thread_Open;
 import Thread.Thread_BTree;
@@ -9,13 +8,11 @@ import Thread.Thread_Find;
 import java.util.Arrays;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-=======
 import Record_Manager.Manager;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
->>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
 import javax.swing.JTable;
 import javax.swing.WindowConstants;
 import javax.swing.table.DefaultTableModel;
@@ -133,7 +130,6 @@ public class DeskPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Table_ForegroundPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_Table_ForegroundPropertyChange
-<<<<<<< HEAD
         try {
             // INFO
             if (!desk) {
@@ -307,11 +303,10 @@ public class DeskPanel extends javax.swing.JPanel {
         } catch (Exception e) {
             //e.printStackTrace();
             //System.out.print("ERROR_PROPERTYCHANGE");
-=======
-        if (desk) {
+            if (desk) {
 
-        } else {
->>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
+            } else {
+            }
         }
     }//GEN-LAST:event_Table_ForegroundPropertyChange
 
@@ -463,7 +458,6 @@ public class DeskPanel extends javax.swing.JPanel {
         //System.out.println("CLOSE");
     }
 
-<<<<<<< HEAD
     public void save() {
         refeshFields();
         tSave = new Thread_Save(desk, Table_Foreground, Table_Background, fields);
@@ -484,7 +478,8 @@ public class DeskPanel extends javax.swing.JPanel {
         thread_BTree.refresh();
         thread_BTree.m.read();
         thread_BTree.setGo(true);
-=======
+    }
+
     public void save(String name) {
         /*  int size = (fields.length * 4);
 
@@ -538,9 +533,7 @@ public class DeskPanel extends javax.swing.JPanel {
         for (int i = 0; i < lista.size(); i++) {
             toSave[i] = (String) lista.get(i);
         }
-        
-        
-        
+
         try {
             Record_Manager.Manager manager = new Manager('|', name + ".txt", 200);
             manager.Write(toSave, fields.length);
@@ -549,7 +542,6 @@ public class DeskPanel extends javax.swing.JPanel {
             System.out.println("ERROR_DESKPANEL_SAVE");
         }
         System.out.println("SAVE");
->>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
     }
 
     public void print() {

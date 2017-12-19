@@ -86,7 +86,6 @@ public class Home extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private Principal.Menu.Elements.BrowsePanel browsePanel1;
     private Principal.Menu.Elements.OptionPanel optionPanel1;

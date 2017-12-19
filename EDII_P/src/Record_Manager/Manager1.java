@@ -11,6 +11,10 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
+<<<<<<< HEAD
+=======
+import java.util.LinkedList;
+>>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,7 +23,9 @@ import java.util.logging.Logger;
  *
  * @author Dennis
  */
-public class Manager {
+
+
+public class Manager1 {
 
     FileWriter write;
     BufferedWriter bufferW;
@@ -29,16 +35,22 @@ public class Manager {
     char delimiter;
     String path;
     int size;
+    private LinkedList listaRegistros = new LinkedList();
+    private File archivo = null;
 
-    public Manager() {
+    public Manager1() {
     }
 
-    public Manager(char delimiter, String path, int size) throws IOException {
+    public Manager1(char delimiter, String path, int size) throws IOException {
         this.delimiter = delimiter;
         this.path = path;
         this.size = size;
         write = new FileWriter(this.path);
         bufferW = new BufferedWriter(write, size);
+    }
+
+    public Manager1(String path) {
+        archivo = new File(path);
     }
 
     public int Write(String[] thing, int amount) throws IOException {
@@ -73,7 +85,7 @@ public class Manager {
             int fieldAmount = scan.nextInt();
             scan.useDelimiter(scan.next().charAt(0) + "");
             for (int i = 0; i < fieldAmount; i++) {
-                
+
             }
             /*
             while ((current = bufferR.readLine()) != null) {
@@ -127,5 +139,51 @@ public class Manager {
         bufferW = new BufferedWriter(write, size);
         //read = new FileReader(path);
         //bufferR = new BufferedReader(read, size);   
+    }
+
+    public void escribirRegistros(LinkedList<String[]> listRecords) {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        String toWrite;
+        try {
+            fw = new FileWriter(archivo, false);
+            bw = new BufferedWriter(fw);
+            for (String[] registro : listRecords) {
+                toWrite = String.join("|", registro);
+                System.out.println("Registo Escrito: " + toWrite);
+                bw.write(toWrite + "#");
+            }
+            bw.flush();
+        } catch (Exception e) {
+        } finally {
+            try {
+                bw.close();
+                fw.close();
+            } catch (Exception e) {
+            }
+        }
+    }
+
+    public void leerRegistros() {
+        Scanner input = null;
+        listaRegistros = new LinkedList();
+        try {
+            input = new Scanner(archivo);
+            input.useDelimiter("#");
+            while (input.hasNext()) {
+                listaRegistros.add(input.next());
+            }
+        } catch (Exception e) {
+        } finally {
+            input.close();
+        }
+    }
+
+    public LinkedList getListaRegistros() {
+        return listaRegistros;
+    }
+
+    public void setListaRegistros(LinkedList listaRegistros) {
+        this.listaRegistros = listaRegistros;
     }
 }

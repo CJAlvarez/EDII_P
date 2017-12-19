@@ -14,12 +14,12 @@ import javax.swing.JTextField;
  *
  * @author USER PC
  */
-public class Frame_FEE extends javax.swing.JFrame {
+public class Frame_FEE1 extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame_FEE
      */
-    public Frame_FEE() {
+    public Frame_FEE1() {
         initComponents();
 //        this.setLayeredPane(null);
         this.pack();
@@ -225,7 +225,6 @@ public class Frame_FEE extends javax.swing.JFrame {
             if (navigationPanel1.dP.isDesk()) {
                 for (int i = 0; i < navigationPanel1.getList_Find().index.size(); i++) {
                     navigationPanel1.dP.getTable_Foreground().setEditingRow(navigationPanel1.getList_Find().index.get(i));
-                    
 
                 }
             } else {
@@ -264,7 +263,6 @@ public class Frame_FEE extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Frame_FEE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
