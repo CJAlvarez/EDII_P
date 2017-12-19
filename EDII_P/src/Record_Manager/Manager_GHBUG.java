@@ -1,3 +1,4 @@
+/*
 package Record_Manager;
 
 import java.io.BufferedReader;
@@ -22,7 +23,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author Dennis
- */
+ -
 
 
 public class Manager1 {
@@ -90,7 +91,7 @@ public class Manager1 {
             /*
             while ((current = bufferR.readLine()) != null) {
                 facts.add(current);
-            }*/
+            }-
             bufferR.close();
             read.close();
             scan.close();
@@ -187,3 +188,4 @@ public class Manager1 {
         this.listaRegistros = listaRegistros;
     }
 }
+*/

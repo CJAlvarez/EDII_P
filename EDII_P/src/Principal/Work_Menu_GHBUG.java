@@ -1,3 +1,4 @@
+/*
 package Principal;
 
 import Desk.Excel_Manager;
@@ -23,7 +24,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author CJ
- */
+ -
 public class Work_Menu extends javax.swing.JFrame {
 
     public Work_Menu() {
@@ -815,13 +816,13 @@ public class Work_Menu extends javax.swing.JFrame {
 >>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
     /**
      * @param args the command line arguments
-     */
+     -
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel -
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+         -
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Darcula".equals(info.getName())) {
@@ -849,7 +850,7 @@ public class Work_Menu extends javax.swing.JFrame {
     /**
      *
      * @param b
-     */
+     -
     public void enableI(boolean b) {
         navigationPanel1.getButton_Find().setEnabled(b);
         frame_FEE.getNavigationPanel1().getButton_Find().setEnabled(b);
@@ -942,3 +943,4 @@ public class Work_Menu extends javax.swing.JFrame {
     LinkedList<String[]> listaRegistros = new LinkedList();
 >>>>>>> 44a4bcdd219c07c92c8d78f2a091000e1dcae02d
 }
+*/
