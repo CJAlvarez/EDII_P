@@ -26,9 +26,9 @@ public class XML_Manager {
     public XML_Manager() {
         xMLOutputFactory = XMLOutputFactory.newInstance();
     }
-    public void guardarCampo(String key, String nombre, String tipo, String longitud){
+    public void exportarCampo(String key, String nombre, String tipo, String longitud){
         try {
-            xMLStreamWriter = xMLOutputFactory.createXMLStreamWriter(new FileOutputStream("Campos.xml"));
+            xMLStreamWriter = xMLOutputFactory.createXMLStreamWriter(new FileOutputStream("XMLCampos.xml"));
             
             xMLStreamWriter.writeStartDocument("utf-8", "1.0");
             xMLStreamWriter.writeComment("Describe los Campos");
